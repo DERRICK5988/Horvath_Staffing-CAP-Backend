@@ -1,0 +1,73 @@
+@iasHostname = https://ajvrfg7kx.accounts.ondemand.com
+@xsuaaHostname = https://sap-build-dev-t60dsh2f.authentication.eu10.hana.ondemand.com
+@iasTokenEndpoint = /oauth2/token
+@capiasClientId = cd56a178-a117-49b6-a1e3-3d6e1196c6b6
+@codeChallenge = E8sZGg-49to1h5rPk5w6l0xKoMz5fhCTp_4Jm-tk3DA
+@codeVerifier = L6Fglaw13U76NKjVmKV5JcnSiD6fhOzOvIzRQKnQOFM
+@btpXsuaaClient = sb-Horvath-Staffing-SAP_Build_DEV-dev!t164948
+@btpXsuaaSecret = lRKc0+rckftNgQAXbvgTqD/PnwQ=
+@capEndpoint = http://localhost:4004
+
+
+##########################################
+# Get SAP IAS token using PKCE
+##########################################
+
+
+##########################################
+# Get SAP IAS authorization code in browser
+# (please adapt the <variables> to your settings)
+##########################################
+https://ajvrfg7kx.accounts.ondemand.com/oauth2/authorize
+?client_id=cd56a178-a117-49b6-a1e3-3d6e1196c6b6
+&code_challenge=E8sZGg-49to1h5rPk5w6l0xKoMz5fhCTp_4Jm-tk3DA
+&code_challenge_method=S256
+&scope=openid
+&redirect_uri=http://localhost/
+&response_type=code
+&state=state
+
+
+##########################################
+# Get SAP IAS token using authorization code
+##########################################
+
+# @name getIasToken
+POST {{iasHostname}}{{iasTokenEndpoint}} HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+client_id={{capiasClientId}}
+&code=744532ca6762505991a333a33b1705c6
+&redirect_uri=http://localhost/
+&grant_type=authorization_code
+&code_verifier={{codeVerifier}}
+
+
+##########################################
+# Get SAP XSUAA token via token exchange
+##########################################
+
+@id_token = eyJraWQiOiJWRUxuQ1RkLXZiYWh5UlJrZFpZNXdmemhvNTQiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkYTMxYWZkMC00MjczLTQ4YmEtYTcxYy1iNTM2OTMwZjhlYmIiLCJpc3MiOiJodHRwczovL2FqdnJmZzdreC5hY2NvdW50cy5vbmRlbWFuZC5jb20iLCJncm91cHMiOiJTdGFmZmluZ19BcHBfRGV2IiwiZ2l2ZW5fbmFtZSI6IkFydGpvbXMiLCJzaWQiOiJTLVNQLTdmMGE0ZTExLTNjZmItNDlmNC05N2FiLTc4ZTcwMDY4ZWIzNCIsImF1ZCI6ImNkNTZhMTc4LWExMTctNDliNi1hMWUzLTNkNmUxMTk2YzZiNiIsInNjaW1faWQiOiJkYTMxYWZkMC00MjczLTQ4YmEtYTcxYy1iNTM2OTMwZjhlYmIiLCJ1c2VyX3V1aWQiOiJkYTMxYWZkMC00MjczLTQ4YmEtYTcxYy1iNTM2OTMwZjhlYmIiLCJ6b25lX3V1aWQiOiJiZTMxYzMwZi1kY2I4LTQ2MzEtOWQ2OC05ZTEzN2QyYzk5NjQiLCJleHAiOjE2NzEyMDQ4NTcsImlhdCI6MTY3MTIwMzA1NywiZmFtaWx5X25hbWUiOiJBdnJhbWVua28iLCJqdGkiOiJhYmJkNWIwNy1iMzFkLTQ2NDEtODE1MS02NTA3NzMyOTA5MTAiLCJlbWFpbCI6ImFydGpvbXMuYXZyYW1lbmtvQHdhbGxkb3JmY29uc3VsdGluZy5jb20ifQ.EukZygwkelcJ4pjY4wyJ00EZCFLTllZvYq0-7puL4u3KnHdgAhoMhka-hAcADH873C4IxwSxWMvGEH_EGCOn-ooic2ckwuUuVcgmkkVxpq0gVin8W9BZbuF1iVawXrHUgcCwzbwYY59P6WH6uflpZwz-u9vBM8VYVo0L7kIub_GdMDkXz6wb6aEGj1LSX3nFg-9o24An15N_Fej6wrYdBcfhAq8ZBJZWM_w7R8WrixIFZ67cCF2MIcnSomGn2V-mkBoLLjgDcNmIKoRM-C8fzeOgDcd86CyxosYg-zIJu1pX8nAlw3cQ3wx7ShWF7X7-0ofP8BGRwCcUbLlvTprpIQ
+
+# @name doXsuaaTokenExchange
+
+POST {{xsuaaHostname}}/oauth/token HTTP/1.1
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+client_id={{btpXsuaaClient}}
+&client_secret={{btpXsuaaSecret}}
+&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
+&response_type=token+id_token
+&assertion={{id_token}}
+
+
+##########################################
+# Call CAP endpoint with SAP IAS token
+##########################################
+
+@access_token = {{getIasToken.response.body.$.access_token}}
+
+# @name getCapResults
+GET {{capEndpoint}}/Staffing/userInfo()
+Authorization: Bearer {{access_token}}

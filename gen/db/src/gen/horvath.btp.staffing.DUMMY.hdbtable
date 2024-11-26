@@ -1,0 +1,4 @@
+COLUMN TABLE horvath_btp_staffing_DUMMY (
+  "EMPTY" NVARCHAR(1) NOT NULL,
+  PRIMARY KEY("EMPTY")
+)

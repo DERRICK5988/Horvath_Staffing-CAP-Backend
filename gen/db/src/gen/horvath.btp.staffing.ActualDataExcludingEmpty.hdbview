@@ -1,0 +1,8 @@
+VIEW horvath_btp_staffing_ActualDataExcludingEmpty AS SELECT
+  ActualDataFourMonths_0.ProjectID,
+  ActualDataFourMonths_0.StaffedEmployee,
+  ActualDataFourMonths_0.Month1,
+  ActualDataFourMonths_0.Month2,
+  ActualDataFourMonths_0.Month3,
+  ActualDataFourMonths_0.Month4
+FROM horvath_btp_staffing_ActualDataFourMonths AS ActualDataFourMonths_0

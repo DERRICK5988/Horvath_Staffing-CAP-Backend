@@ -1,0 +1,9 @@
+COLUMN TABLE horvath_btp_staffing_Project (
+  ProjectID NVARCHAR(40) NOT NULL,
+  ProjectName NVARCHAR(40),
+  Customer NVARCHAR(10),
+  CustomerName NVARCHAR(166),
+  StartDate DATE,
+  EndDate DATE,
+  PRIMARY KEY(ProjectID)
+)

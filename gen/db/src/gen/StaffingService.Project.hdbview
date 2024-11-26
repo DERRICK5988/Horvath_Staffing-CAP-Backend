@@ -1,0 +1,8 @@
+VIEW StaffingService_Project AS SELECT
+  Project_0.ProjectID,
+  Project_0.ProjectName,
+  Project_0.Customer,
+  Project_0.CustomerName,
+  Project_0.StartDate,
+  Project_0.EndDate
+FROM horvath_btp_staffing_Project AS Project_0

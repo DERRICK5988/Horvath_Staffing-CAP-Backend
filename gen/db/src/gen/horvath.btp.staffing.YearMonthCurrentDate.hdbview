@@ -1,0 +1,6 @@
+VIEW horvath_btp_staffing_YearMonthCurrentDate AS SELECT
+  TimeDimWithCurDateIndicator_0."YEAR",
+  TimeDimWithCurDateIndicator_0."MONTH",
+  TRUE AS CurrentYearMonthIndicator
+FROM horvath_btp_staffing_TimeDimWithCurDateIndicator AS TimeDimWithCurDateIndicator_0
+WHERE TimeDimWithCurDateIndicator_0.CurrentDateIndicator = TRUE

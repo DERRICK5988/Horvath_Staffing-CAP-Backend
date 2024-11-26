@@ -1,0 +1,26 @@
+VIEW horvath_btp_staffing_ActualPlannedDataFourMonthsView AS SELECT
+  UnionPlannedActualProjectEmployee_2.ProjectID,
+  ProjectData_1.ProjectName,
+  ProjectData_1.CustomerName,
+  UnionPlannedActualProjectEmployee_2.StaffedEmployee,
+  ActualDataExcludingEmpty_0.Month1,
+  ActualDataExcludingEmpty_0.Month2,
+  ActualDataExcludingEmpty_0.Month3,
+  ActualDataExcludingEmpty_0.Month4,
+  ProjectData_1.StartDate,
+  ProjectData_1.EndDate
+FROM ((horvath_btp_staffing_UnionPlannedActualProjectEmployee AS UnionPlannedActualProjectEmployee_2 LEFT JOIN (SELECT
+    ActualDataExcludingEmpty_3.ProjectID,
+    ActualDataExcludingEmpty_3.StaffedEmployee,
+    ActualDataExcludingEmpty_3.Month1,
+    ActualDataExcludingEmpty_3.Month2,
+    ActualDataExcludingEmpty_3.Month3,
+    ActualDataExcludingEmpty_3.Month4
+  FROM horvath_btp_staffing_ActualDataExcludingEmpty AS ActualDataExcludingEmpty_3) AS ActualDataExcludingEmpty_0 ON UnionPlannedActualProjectEmployee_2.ProjectID = ActualDataExcludingEmpty_0.ProjectID AND UnionPlannedActualProjectEmployee_2.StaffedEmployee = ActualDataExcludingEmpty_0.StaffedEmployee) LEFT JOIN (SELECT
+    Project_4.ProjectID,
+    Project_4.ProjectName,
+    Project_4.Customer,
+    Project_4.CustomerName,
+    Project_4.StartDate,
+    Project_4.EndDate
+  FROM horvath_btp_staffing_Project AS Project_4) AS ProjectData_1 ON UnionPlannedActualProjectEmployee_2.ProjectID = ProjectData_1.ProjectID)

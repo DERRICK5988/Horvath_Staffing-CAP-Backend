@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+    <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema Namespace="StaffingService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <Annotation Term="Core.Links">
+        <Collection>
+          <Record>
+            <PropertyValue Property="rel" String="author"/>
+            <PropertyValue Property="href" String="https://cap.cloud.sap"/>
+          </Record>
+        </Collection>
+      </Annotation>
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="StaffingData" EntityType="StaffingService.StaffingData"/>
+        <EntitySet Name="Project" EntityType="StaffingService.Project"/>
+        <EntitySet Name="StaffingToPlanned" EntityType="StaffingService.StaffingToPlanned"/>
+        <EntitySet Name="PlannedHours" EntityType="StaffingService.PlannedHours"/>
+        <EntitySet Name="ActualHours" EntityType="StaffingService.ActualHours"/>
+        <EntitySet Name="Totals" EntityType="StaffingService.Totals"/>
+        <EntitySet Name="ActualPlannedDataFourMonths" EntityType="StaffingService.ActualPlannedDataFourMonths"/>
+        <Singleton Name="me" Type="StaffingService.me"/>
+        <EntitySet Name="MyData" EntityType="StaffingService.MyData"/>
+        <EntitySet Name="ListOfOnBehalfEmp" EntityType="StaffingService.ListOfOnBehalfEmp"/>
+        <ActionImport Name="transferStaffingToPlannedData" Action="StaffingService.transferStaffingToPlannedData"/>
+        <ActionImport Name="getPersonWorkAgreement" Action="StaffingService.getPersonWorkAgreement"/>
+        <FunctionImport Name="userInfo" Function="StaffingService.userInfo"/>
+      </EntityContainer>
+      <EntityType Name="StaffingData">
+        <Key>
+          <PropertyRef Name="ProjectID"/>
+          <PropertyRef Name="WorkPackageID"/>
+          <PropertyRef Name="Period"/>
+          <PropertyRef Name="FiscalYear"/>
+          <PropertyRef Name="StaffedEmployee"/>
+        </Key>
+        <Property Name="ProjectID" Type="Edm.String" MaxLength="40" Nullable="false"/>
+        <Property Name="WorkPackageID" Type="Edm.String" MaxLength="50" Nullable="false"/>
+        <Property Name="Period" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="FiscalYear" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="StaffedEmployee" Type="Edm.String" MaxLength="8" Nullable="false"/>
+        <Property Name="StaffedEffort" Type="Edm.Decimal" Precision="15" Scale="3"/>
+      </EntityType>
+      <EntityType Name="Project">
+        <Key>
+          <PropertyRef Name="ProjectID"/>
+        </Key>
+        <Property Name="ProjectID" Type="Edm.String" MaxLength="40" Nullable="false"/>
+        <Property Name="ProjectName" Type="Edm.String" MaxLength="40"/>
+        <Property Name="Customer" Type="Edm.String" MaxLength="10"/>
+        <Property Name="CustomerName" Type="Edm.String" MaxLength="166"/>
+        <Property Name="StartDate" Type="Edm.Date"/>
+        <Property Name="EndDate" Type="Edm.Date"/>
+      </EntityType>
+      <EntityType Name="StaffingToPlanned">
+        <Key>
+          <PropertyRef Name="ProjectID"/>
+          <PropertyRef Name="Period"/>
+          <PropertyRef Name="FiscalYear"/>
+          <PropertyRef Name="StaffedEmployee"/>
+        </Key>
+        <Property Name="ProjectID" Type="Edm.String" MaxLength="40" Nullable="false"/>
+        <Property Name="Period" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="FiscalYear" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="StaffedEmployee" Type="Edm.String" MaxLength="8" Nullable="false"/>
+        <Property Name="StaffedEffort" Type="Edm.Decimal" Precision="15" Scale="2"/>
+      </EntityType>
+      <EntityType Name="PlannedHours">
+        <Key>
+          <PropertyRef Name="ProjectID"/>
+          <PropertyRef Name="FiscalYear"/>
+          <PropertyRef Name="Period"/>
+          <PropertyRef Name="StaffedEmployee"/>
+        </Key>
+        <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="255"/>
+        <Property Name="ModifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+        <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255"/>
+        <Property Name="ProjectID" Type="Edm.String" MaxLength="40" Nullable="false"/>
+        <Property Name="FiscalYear" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Period" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="StaffedEmployee" Type="Edm.String" MaxLength="8" Nullable="false"/>
+        <Property Name="StaffedEffort" Type="Edm.Decimal" Precision="15" Scale="2"/>
+      </EntityType>
+      <EntityType Name="ActualHours">
+        <Key>
+          <PropertyRef Name="ProjectID"/>
+          <PropertyRef Name="FiscalYear"/>
+          <PropertyRef Name="Period"/>
+          <PropertyRef Name="StaffedEmployee"/>
+        </Key>
+        <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="255"/>
+        <Property Name="ModifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+        <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255"/>
+        <Property Name="ProjectID" Type="Edm.String" MaxLength="40" Nullable="false"/>
+        <Property Name="FiscalYear" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Period" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="StaffedEmployee" Type="Edm.String" MaxLength="8" Nullable="false"/>
+        <Property Name="StaffedEffort" Type="Edm.Decimal" Precision="15" Scale="2"/>
+      </EntityType>
+      <EntityType Name="Totals">
+        <Key>
+          <PropertyRef Name="Position"/>
+          <PropertyRef Name="StaffedEmployee"/>
+        </Key>
+        <Property Name="Position" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="PositionText" Type="Edm.String" MaxLength="100"/>
+        <Property Name="StaffedEmployee" Type="Edm.String" MaxLength="8" Nullable="false"/>
+        <Property Name="Month1" Type="Edm.Decimal" Precision="15" Scale="2"/>
+        <Property Name="Month2" Type="Edm.Decimal" Precision="15" Scale="2"/>
+        <Property Name="Month3" Type="Edm.Decimal" Precision="15" Scale="2"/>
+        <Property Name="Month4" Type="Edm.Decimal" Precision="15" Scale="2"/>
+        <Property Name="SetColor" Type="Edm.Boolean"/>
+      </EntityType>
+      <EntityType Name="ActualPlannedDataFourMonths">
+        <Key>
+          <PropertyRef Name="ProjectID"/>
+          <PropertyRef Name="StaffedEmployee"/>
+        </Key>
+        <Property Name="ProjectID" Type="Edm.String" MaxLength="40" Nullable="false"/>
+        <Property Name="StaffedEmployee" Type="Edm.String" MaxLength="8" Nullable="false"/>
+        <Property Name="ProjectName" Type="Edm.String" MaxLength="40"/>
+        <Property Name="CustomerName" Type="Edm.String" MaxLength="166"/>
+        <Property Name="PrevMonth1" Type="Edm.Decimal" Precision="15" Scale="2"/>
+        <Property Name="Month1" Type="Edm.Decimal" Precision="15" Scale="2"/>
+        <Property Name="Month2" Type="Edm.Decimal" Precision="15" Scale="2"/>
+        <Property Name="Month3" Type="Edm.Decimal" Precision="15" Scale="2"/>
+        <Property Name="Month4" Type="Edm.Decimal" Precision="15" Scale="2"/>
+        <Property Name="StartDate" Type="Edm.Date"/>
+        <Property Name="EndDate" Type="Edm.Date"/>
+      </EntityType>
+      <EntityType Name="me">
+        <Key>
+          <PropertyRef Name="PersonWorkAgreement"/>
+        </Key>
+        <Property Name="PersonWorkAgreement" Type="Edm.String" MaxLength="8" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="MyData">
+        <Key>
+          <PropertyRef Name="DefaultEmailAddress"/>
+        </Key>
+        <Property Name="DefaultEmailAddress" Type="Edm.String" MaxLength="241" Nullable="false"/>
+        <Property Name="PersonWorkAgreement" Type="Edm.String" MaxLength="8"/>
+      </EntityType>
+      <EntityType Name="ListOfOnBehalfEmp">
+        <Key>
+          <PropertyRef Name="DefaultEmailAddress"/>
+        </Key>
+        <Property Name="DefaultEmailAddress" Type="Edm.String" MaxLength="241" Nullable="false"/>
+        <Property Name="PersonWorkAgreement" Type="Edm.String" MaxLength="8"/>
+        <Property Name="PersonFullName" Type="Edm.String" MaxLength="80"/>
+      </EntityType>
+      <Action Name="transferStaffingToPlannedData" IsBound="false"/>
+      <Action Name="getPersonWorkAgreement" IsBound="false">
+        <Parameter Name="DefaultEmailAddress" Type="Edm.String" MaxLength="241"/>
+        <ReturnType Type="StaffingService.me"/>
+      </Action>
+      <Function Name="userInfo" IsBound="false" IsComposable="false">
+        <ReturnType Type="Edm.String"/>
+      </Function>
+      <Annotations Target="StaffingService.StaffingToPlanned/StaffedEffort">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.PlannedHours/CreatedAt">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.PlannedHours/CreatedBy">
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+        <Annotation Term="Common.Label" String="{i18n>UserID}"/>
+      </Annotations>
+      <Annotations Target="StaffingService.PlannedHours/ModifiedAt">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.PlannedHours/ModifiedBy">
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+        <Annotation Term="Common.Label" String="{i18n>UserID}"/>
+      </Annotations>
+      <Annotations Target="StaffingService.ActualHours/CreatedAt">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.ActualHours/CreatedBy">
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+        <Annotation Term="Common.Label" String="{i18n>UserID}"/>
+      </Annotations>
+      <Annotations Target="StaffingService.ActualHours/ModifiedAt">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.ActualHours/ModifiedBy">
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+        <Annotation Term="Common.Label" String="{i18n>UserID}"/>
+      </Annotations>
+      <Annotations Target="StaffingService.Totals/Position">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.Totals/PositionText">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.Totals/StaffedEmployee">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.Totals/Month1">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.Totals/Month2">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.Totals/Month3">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.Totals/Month4">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.Totals/SetColor">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="StaffingService.EntityContainer/MyData">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="StaffingService.EntityContainer/ListOfOnBehalfEmp">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

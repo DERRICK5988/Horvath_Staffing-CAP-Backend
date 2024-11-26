@@ -1,0 +1,8 @@
+VIEW horvath_btp_staffing_TimeDimWithCurDateIndicator AS SELECT DISTINCT
+  TD_1.DATE_SQL,
+  TD_1."YEAR",
+  TD_1."MONTH",
+  CASE WHEN CD_0.CUR_DATE IS NOT NULL THEN TRUE ELSE FALSE END AS CurrentDateIndicator
+FROM (horvath_btp_staffing_M_TIME_DIMENSION AS TD_1 LEFT JOIN (SELECT
+    current_date AS CUR_DATE
+  FROM horvath_btp_staffing_DUMMY AS DUMMY_2) AS CD_0 ON TD_1.DATE_SQL = CD_0.CUR_DATE)

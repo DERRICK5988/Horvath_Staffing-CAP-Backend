@@ -1,0 +1,7 @@
+VIEW StaffingService_StaffingToPlanned AS SELECT
+  StaffingToPlanned_0.ProjectID,
+  StaffingToPlanned_0.Period,
+  StaffingToPlanned_0.FiscalYear,
+  StaffingToPlanned_0.StaffedEmployee,
+  StaffingToPlanned_0.StaffedEffort
+FROM horvath_btp_staffing_StaffingToPlanned AS StaffingToPlanned_0

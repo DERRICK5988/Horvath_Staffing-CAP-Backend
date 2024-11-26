@@ -1,0 +1,4 @@
+VIEW horvath_btp_staffing_UnionPlannedActualProjectEmployee AS SELECT
+  ActualDataExcludingEmpty_0.ProjectID,
+  ActualDataExcludingEmpty_0.StaffedEmployee
+FROM horvath_btp_staffing_ActualDataExcludingEmpty AS ActualDataExcludingEmpty_0

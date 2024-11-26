@@ -1,0 +1,8 @@
+VIEW StaffingDataExportService_StaffingData AS SELECT
+  StaffingData_0.ProjectID,
+  StaffingData_0.WorkPackageID,
+  StaffingData_0.Period,
+  StaffingData_0.FiscalYear,
+  StaffingData_0.StaffedEmployee,
+  StaffingData_0.StaffedEffort
+FROM horvath_btp_staffing_StaffingData AS StaffingData_0

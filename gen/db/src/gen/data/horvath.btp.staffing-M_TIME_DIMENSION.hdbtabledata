@@ -1,0 +1,31 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "HORVATH_BTP_STAFFING_M_TIME_DIMENSION",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "horvath.btp.staffing-M_TIME_DIMENSION.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ","
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "YEAR",
+          "MONTH",
+          "DAY",
+          "DATE_SQL"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "YEAR": "YEAR",
+        "MONTH": "MONTH",
+        "DAY": "DAY",
+        "DATE_SQL": "DATE_SQL"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+COLUMN TABLE horvath_btp_staffing_ActualHours (
+  CreatedAt TIMESTAMP,
+  CreatedBy NVARCHAR(255),
+  ModifiedAt TIMESTAMP,
+  ModifiedBy NVARCHAR(255),
+  ProjectID NVARCHAR(40) NOT NULL,
+  FiscalYear NVARCHAR(4) NOT NULL,
+  Period NVARCHAR(3) NOT NULL,
+  StaffedEmployee NVARCHAR(8) NOT NULL,
+  StaffedEffort DECIMAL(15, 2),
+  PRIMARY KEY(ProjectID, FiscalYear, Period, StaffedEmployee)
+)

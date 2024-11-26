@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "creator": "cds-dk 4.9.7"
+  },
+  "$version": "2.0",
+  "definitions": {
+    "YY1_PERSONWAEMAILAPI_CDS_0001": {
+      "kind": "service",
+      "@cds.external": true,
+      "@m.IsDefaultEntityContainer": "true",
+      "@sap.message.scope.supported": "true",
+      "@sap.supported.formats": "atom json xlsx"
+    },
+    "YY1_PERSONWAEMAILAPI_CDS_0001.YY1_PersonWAEmailAPI": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "PersonWAEmailAPI",
+      "elements": {
+        "PersonWorkAgreement": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.required.in.filter": "false",
+          "@sap.text": "PersonFullName",
+          "@sap.label": "Personnel Number"
+        },
+        "PersonFullName": {
+          "type": "cds.String",
+          "length": 80,
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Full Name"
+        },
+        "DefaultEmailAddress": {
+          "type": "cds.String",
+          "length": 241,
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Email Address"
+        },
+        "LastName": {
+          "type": "cds.String",
+          "length": 40,
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Last Name",
+          "@sap.quickinfo": "Last name of business partner (person)"
+        },
+        "FirstName": {
+          "type": "cds.String",
+          "length": 40,
+          "@sap.required.in.filter": "false",
+          "@sap.label": "First Name",
+          "@sap.quickinfo": "First name of business partner (person)"
+        },
+        "EmailAddress": {
+          "type": "cds.String",
+          "length": 241,
+          "@sap.required.in.filter": "false",
+          "@sap.label": "EmailAddress"
+        }
+      }
+    }
+  }
+}

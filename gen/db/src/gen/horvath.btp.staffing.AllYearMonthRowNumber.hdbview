@@ -1,0 +1,10 @@
+VIEW horvath_btp_staffing_AllYearMonthRowNumber AS SELECT
+  UYM_1."YEAR",
+  '0' || UYM_1."MONTH" AS "MONTH",
+  ROW_NUMBER() OVER (ORDER BY UYM_1."YEAR", UYM_1."MONTH") AS RowNumber,
+  YMCD_0.CurrentYearMonthIndicator
+FROM (horvath_btp_staffing_UniqueYearMonth AS UYM_1 LEFT JOIN (SELECT
+    YearMonthCurrentDate_2."YEAR",
+    YearMonthCurrentDate_2."MONTH",
+    YearMonthCurrentDate_2.CurrentYearMonthIndicator
+  FROM horvath_btp_staffing_YearMonthCurrentDate AS YearMonthCurrentDate_2) AS YMCD_0 ON UYM_1."YEAR" = YMCD_0."YEAR" AND UYM_1."MONTH" = YMCD_0."MONTH")

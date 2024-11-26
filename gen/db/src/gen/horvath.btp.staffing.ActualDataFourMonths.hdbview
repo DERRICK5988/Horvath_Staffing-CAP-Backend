@@ -1,0 +1,24 @@
+VIEW horvath_btp_staffing_ActualDataFourMonths AS SELECT DISTINCT
+  ActualDataUnionProjects_4.ProjectID,
+  ActualDataUnionProjects_4.StaffedEmployee,
+  ActualDataFourMonths1_0.Month1,
+  ActualDataFourMonths2_1.Month2,
+  ActualDataFourMonths3_2.Month3,
+  ActualDataFourMonths4_3.Month4
+FROM ((((horvath_btp_staffing_ActualDataUnionProjects AS ActualDataUnionProjects_4 LEFT JOIN (SELECT
+    ActualDataFourMonths1_5.ProjectID,
+    ActualDataFourMonths1_5.StaffedEmployee,
+    ActualDataFourMonths1_5.Month1
+  FROM horvath_btp_staffing_ActualDataFourMonths1 AS ActualDataFourMonths1_5) AS ActualDataFourMonths1_0 ON ActualDataUnionProjects_4.ProjectID = ActualDataFourMonths1_0.ProjectID AND ActualDataUnionProjects_4.StaffedEmployee = ActualDataFourMonths1_0.StaffedEmployee) LEFT JOIN (SELECT
+    ActualDataFourMonths2_6.ProjectID,
+    ActualDataFourMonths2_6.StaffedEmployee,
+    ActualDataFourMonths2_6.Month2
+  FROM horvath_btp_staffing_ActualDataFourMonths2 AS ActualDataFourMonths2_6) AS ActualDataFourMonths2_1 ON ActualDataUnionProjects_4.ProjectID = ActualDataFourMonths2_1.ProjectID AND ActualDataUnionProjects_4.StaffedEmployee = ActualDataFourMonths2_1.StaffedEmployee) LEFT JOIN (SELECT
+    ActualDataFourMonths3_7.ProjectID,
+    ActualDataFourMonths3_7.StaffedEmployee,
+    ActualDataFourMonths3_7.Month3
+  FROM horvath_btp_staffing_ActualDataFourMonths3 AS ActualDataFourMonths3_7) AS ActualDataFourMonths3_2 ON ActualDataUnionProjects_4.ProjectID = ActualDataFourMonths3_2.ProjectID AND ActualDataUnionProjects_4.StaffedEmployee = ActualDataFourMonths3_2.StaffedEmployee) LEFT JOIN (SELECT
+    ActualDataFourMonths4_8.ProjectID,
+    ActualDataFourMonths4_8.StaffedEmployee,
+    ActualDataFourMonths4_8.Month4
+  FROM horvath_btp_staffing_ActualDataFourMonths4 AS ActualDataFourMonths4_8) AS ActualDataFourMonths4_3 ON ActualDataUnionProjects_4.ProjectID = ActualDataFourMonths4_3.ProjectID AND ActualDataUnionProjects_4.StaffedEmployee = ActualDataFourMonths4_3.StaffedEmployee)

@@ -1,0 +1,5324 @@
+{
+  "definitions": {
+    "StaffingService": {
+      "@source": "srv/staffing.cds",
+      "kind": "service",
+      "@path": "/Staffing"
+    },
+    "StaffingService.StaffingData": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "horvath.btp.staffing.StaffingData"
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "WorkPackageID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 50
+        },
+        "Period": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "FiscalYear": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "StaffedEffort": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        }
+      }
+    },
+    "StaffingService.Project": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "horvath.btp.staffing.Project"
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "ProjectName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Customer": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CustomerName": {
+          "type": "cds.String",
+          "length": 166
+        },
+        "StartDate": {
+          "type": "cds.Date"
+        },
+        "EndDate": {
+          "type": "cds.Date"
+        }
+      }
+    },
+    "StaffingService.StaffingToPlanned": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "horvath.btp.staffing.StaffingToPlanned"
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Period": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "FiscalYear": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "StaffedEffort": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "StaffingService.PlannedHours": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "horvath.btp.staffing.PlannedHours"
+          ]
+        }
+      },
+      "elements": {
+        "CreatedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "type": "cds.Timestamp"
+        },
+        "CreatedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@title": "{i18n>UserID}",
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "ModifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "type": "cds.Timestamp"
+        },
+        "ModifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@title": "{i18n>UserID}",
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "FiscalYear": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Period": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "StaffedEffort": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "StaffingService.ActualHours": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "horvath.btp.staffing.ActualHours"
+          ]
+        }
+      },
+      "elements": {
+        "CreatedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "type": "cds.Timestamp"
+        },
+        "CreatedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@title": "{i18n>UserID}",
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "ModifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "type": "cds.Timestamp"
+        },
+        "ModifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@title": "{i18n>UserID}",
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "FiscalYear": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Period": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "StaffedEffort": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "StaffingService.Totals": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "horvath.btp.staffing.Totals"
+          ]
+        }
+      },
+      "elements": {
+        "Position": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "PositionText": {
+          "@Core.Computed": true,
+          "type": "cds.String",
+          "length": 100
+        },
+        "StaffedEmployee": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month1": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month2": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month3": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month4": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "SetColor": {
+          "@Core.Computed": true,
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "StaffingService.ActualPlannedDataFourMonths": {
+      "kind": "entity",
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "ProjectName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "CustomerName": {
+          "type": "cds.String",
+          "length": 166
+        },
+        "PrevMonth1": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month1": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month2": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month3": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month4": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "StartDate": {
+          "type": "cds.Date"
+        },
+        "EndDate": {
+          "type": "cds.Date"
+        }
+      }
+    },
+    "StaffingService.transferStaffingToPlannedData": {
+      "kind": "action"
+    },
+    "StaffingService.getPersonWorkAgreement": {
+      "kind": "action",
+      "params": {
+        "DefaultEmailAddress": {
+          "type": "cds.String",
+          "length": 241
+        }
+      },
+      "returns": {
+        "type": "StaffingService.me"
+      }
+    },
+    "StaffingService.me": {
+      "kind": "entity",
+      "@odata.singleton": true,
+      "@cds.persistence.skip": true,
+      "elements": {
+        "PersonWorkAgreement": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        }
+      }
+    },
+    "StaffingService.MyData": {
+      "kind": "entity",
+      "@readonly": true,
+      "@cds.persistence.skip": true,
+      "elements": {
+        "DefaultEmailAddress": {
+          "key": true,
+          "type": "cds.String",
+          "length": 241
+        },
+        "PersonWorkAgreement": {
+          "type": "cds.String",
+          "length": 8
+        }
+      }
+    },
+    "StaffingService.ListOfOnBehalfEmp": {
+      "kind": "entity",
+      "@readonly": true,
+      "@cds.persistence.skip": true,
+      "elements": {
+        "DefaultEmailAddress": {
+          "key": true,
+          "type": "cds.String",
+          "length": 241
+        },
+        "PersonWorkAgreement": {
+          "type": "cds.String",
+          "length": 8
+        },
+        "PersonFullName": {
+          "type": "cds.String",
+          "length": 80
+        }
+      }
+    },
+    "StaffingService.userInfo": {
+      "kind": "function",
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "StaffingDataExportService": {
+      "@source": "srv/staffingDataExport.cds",
+      "kind": "service",
+      "@path": "/StaffingDataExport",
+      "@requires": "StaffingDataExport"
+    },
+    "StaffingDataExportService.ActualHours": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "horvath.btp.staffing.ActualHours"
+          ]
+        },
+        "columns": [
+          {
+            "ref": [
+              "ProjectID"
+            ]
+          },
+          {
+            "ref": [
+              "FiscalYear"
+            ]
+          },
+          {
+            "ref": [
+              "Period"
+            ]
+          },
+          {
+            "ref": [
+              "StaffedEmployee"
+            ]
+          },
+          {
+            "ref": [
+              "StaffedEffort"
+            ]
+          }
+        ]
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "FiscalYear": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Period": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "StaffedEffort": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "StaffingDataExportService.StaffingData": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "horvath.btp.staffing.StaffingData"
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "WorkPackageID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 50
+        },
+        "Period": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "FiscalYear": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "StaffedEffort": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        }
+      }
+    },
+    "YY1_PERSONWAEMAILAPI_CDS_0001": {
+      "@source": "srv/external/YY1_PERSONWAEMAILAPI_CDS_0001.csn",
+      "kind": "service",
+      "@cds.external": "odata-v2",
+      "@m.IsDefaultEntityContainer": "true",
+      "@sap.message.scope.supported": "true",
+      "@sap.supported.formats": "atom json xlsx"
+    },
+    "YY1_PERSONWAEMAILAPI_CDS_0001.YY1_PersonWAEmailAPI": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "PersonWAEmailAPI",
+      "elements": {
+        "PersonWorkAgreement": {
+          "@sap.display.format": "NonNegative",
+          "@sap.required.in.filter": "false",
+          "@sap.text": "PersonFullName",
+          "@sap.label": "Personnel Number",
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "PersonFullName": {
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Full Name",
+          "type": "cds.String",
+          "length": 80
+        },
+        "DefaultEmailAddress": {
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Email Address",
+          "type": "cds.String",
+          "length": 241
+        },
+        "LastName": {
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Last Name",
+          "@sap.quickinfo": "Last name of business partner (person)",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FirstName": {
+          "@sap.required.in.filter": "false",
+          "@sap.label": "First Name",
+          "@sap.quickinfo": "First name of business partner (person)",
+          "type": "cds.String",
+          "length": 40
+        },
+        "EmailAddress": {
+          "@sap.required.in.filter": "false",
+          "@sap.label": "EmailAddress",
+          "type": "cds.String",
+          "length": 241
+        }
+      }
+    },
+    "YY1_EMPLOYEEANSENCEAPI_CDS_0001": {
+      "@source": "srv/external/YY1_EMPLOYEEANSENCEAPI_CDS_0001.csn",
+      "kind": "service",
+      "@cds.external": "odata-v2",
+      "@m.IsDefaultEntityContainer": "true",
+      "@sap.message.scope.supported": "true",
+      "@sap.supported.formats": "atom json xlsx"
+    },
+    "YY1_EMPLOYEEANSENCEAPI_CDS_0001.YY1_EmployeeAnsenceAPI": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.semantics": "aggregate",
+      "@sap.label": "Employee Work / Ansence API",
+      "elements": {
+        "ID": {
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "key": true,
+          "type": "cds.LargeString"
+        },
+        "PersonWorkAgreement": {
+          "@sap.aggregation.role": "dimension",
+          "@sap.display.format": "NonNegative",
+          "@sap.required.in.filter": "false",
+          "@sap.text": "PersonFullName",
+          "@sap.label": "Personnel Number",
+          "type": "cds.String",
+          "length": 8
+        },
+        "CalendarDate": {
+          "@sap.aggregation.role": "dimension",
+          "@sap.display.format": "Date",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Valid On",
+          "@sap.quickinfo": "Validity Date",
+          "type": "cds.Date"
+        },
+        "PersonFullName": {
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Full Name",
+          "type": "cds.String",
+          "length": 80
+        },
+        "FiscalYear": {
+          "@sap.aggregation.role": "dimension",
+          "@sap.display.format": "NonNegative",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Fiscal Year",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FiscalPeriod": {
+          "@sap.aggregation.role": "dimension",
+          "@sap.display.format": "NonNegative",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Fiscal Period",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AbsenceInHours": {
+          "@sap.aggregation.role": "measure",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "AbsenceInHours",
+          "@sap.filterable": "false",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "PlannedWorkingHours": {
+          "@sap.aggregation.role": "measure",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "PlannedWorkingHours",
+          "@sap.filterable": "false",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "PersonHours": {
+          "@sap.aggregation.role": "measure",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "PersonHours",
+          "@sap.filterable": "false",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.StaffingData": {
+      "kind": "entity",
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "WorkPackageID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 50
+        },
+        "Period": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "FiscalYear": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "StaffedEffort": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        }
+      }
+    },
+    "horvath.btp.staffing.Project": {
+      "kind": "entity",
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "ProjectName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Customer": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CustomerName": {
+          "type": "cds.String",
+          "length": 166
+        },
+        "StartDate": {
+          "type": "cds.Date"
+        },
+        "EndDate": {
+          "type": "cds.Date"
+        }
+      }
+    },
+    "horvath.btp.staffing.PlannedHours": {
+      "kind": "entity",
+      "includes": [
+        "customManaged"
+      ],
+      "elements": {
+        "CreatedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "type": "cds.Timestamp"
+        },
+        "CreatedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@title": "{i18n>UserID}",
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "ModifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "type": "cds.Timestamp"
+        },
+        "ModifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@title": "{i18n>UserID}",
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "FiscalYear": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Period": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "StaffedEffort": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.ActualHours": {
+      "kind": "entity",
+      "includes": [
+        "customManaged"
+      ],
+      "elements": {
+        "CreatedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "type": "cds.Timestamp"
+        },
+        "CreatedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@title": "{i18n>UserID}",
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "ModifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "type": "cds.Timestamp"
+        },
+        "ModifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@title": "{i18n>UserID}",
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "FiscalYear": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Period": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "StaffedEffort": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.M_TIME_DIMENSION": {
+      "kind": "entity",
+      "elements": {
+        "DATE_SQL": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "YEAR": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "MONTH": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "DAY": {
+          "type": "cds.String",
+          "length": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.DUMMY": {
+      "kind": "entity",
+      "elements": {
+        "Empty": {
+          "key": true,
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "horvath.btp.staffing.DUMMY2": {
+      "kind": "entity",
+      "elements": {
+        "Empty": {
+          "key": true,
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "horvath.btp.staffing.StaffingToPlanned": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.StaffingData"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "ProjectID"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "Period"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "FiscalYear"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "xpr": [
+                {
+                  "func": "round",
+                  "args": [
+                    {
+                      "func": "SUM",
+                      "args": [
+                        {
+                          "ref": [
+                            "StaffedEffort"
+                          ]
+                        }
+                      ],
+                      "xpr": [
+                        "over",
+                        {
+                          "xpr": [
+                            "partition",
+                            "by",
+                            {
+                              "ref": [
+                                "ProjectID"
+                              ]
+                            },
+                            ",",
+                            {
+                              "ref": [
+                                "Period"
+                              ]
+                            },
+                            ",",
+                            {
+                              "ref": [
+                                "FiscalYear"
+                              ]
+                            },
+                            ",",
+                            {
+                              "ref": [
+                                "StaffedEmployee"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": 2
+                    }
+                  ],
+                  "cast": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 2
+                  }
+                }
+              ],
+              "as": "StaffedEffort",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Period": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "FiscalYear": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "StaffedEffort": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.PlannedDataFourMonths1": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.PlannedHours"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "ProjectID"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "StaffedEffort"
+                  ]
+                }
+              ],
+              "xpr": [
+                "over",
+                {
+                  "xpr": [
+                    "partition",
+                    "by",
+                    {
+                      "ref": [
+                        "ProjectID"
+                      ]
+                    },
+                    ",",
+                    {
+                      "ref": [
+                        "StaffedEmployee"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "Month1",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            }
+          ],
+          "where": [
+            {
+              "list": [
+                {
+                  "ref": [
+                    "FiscalYear"
+                  ]
+                },
+                {
+                  "ref": [
+                    "Period"
+                  ]
+                }
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.YearMonth1"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month1": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.PlannedDataFourMonths2": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.PlannedHours"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "ProjectID"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "StaffedEffort"
+                  ]
+                }
+              ],
+              "xpr": [
+                "over",
+                {
+                  "xpr": [
+                    "partition",
+                    "by",
+                    {
+                      "ref": [
+                        "ProjectID"
+                      ]
+                    },
+                    ",",
+                    {
+                      "ref": [
+                        "StaffedEmployee"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "Month2",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            }
+          ],
+          "where": [
+            {
+              "list": [
+                {
+                  "ref": [
+                    "FiscalYear"
+                  ]
+                },
+                {
+                  "ref": [
+                    "Period"
+                  ]
+                }
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.YearMonth2"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month2": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.PlannedDataFourMonths3": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.PlannedHours"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "ProjectID"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "StaffedEffort"
+                  ]
+                }
+              ],
+              "xpr": [
+                "over",
+                {
+                  "xpr": [
+                    "partition",
+                    "by",
+                    {
+                      "ref": [
+                        "ProjectID"
+                      ]
+                    },
+                    ",",
+                    {
+                      "ref": [
+                        "StaffedEmployee"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "Month3",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            }
+          ],
+          "where": [
+            {
+              "list": [
+                {
+                  "ref": [
+                    "FiscalYear"
+                  ]
+                },
+                {
+                  "ref": [
+                    "Period"
+                  ]
+                }
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.YearMonth3"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month3": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.PlannedDataFourMonths4": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.PlannedHours"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "ProjectID"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "StaffedEffort"
+                  ]
+                }
+              ],
+              "xpr": [
+                "over",
+                {
+                  "xpr": [
+                    "partition",
+                    "by",
+                    {
+                      "ref": [
+                        "ProjectID"
+                      ]
+                    },
+                    ",",
+                    {
+                      "ref": [
+                        "StaffedEmployee"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "Month4",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            }
+          ],
+          "where": [
+            {
+              "list": [
+                {
+                  "ref": [
+                    "FiscalYear"
+                  ]
+                },
+                {
+                  "ref": [
+                    "Period"
+                  ]
+                }
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.YearMonth4"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month4": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.PlannedDataFourMonths": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "left",
+            "args": [
+              {
+                "join": "left",
+                "args": [
+                  {
+                    "join": "left",
+                    "args": [
+                      {
+                        "join": "left",
+                        "args": [
+                          {
+                            "ref": [
+                              "horvath.btp.staffing.PlannedHours"
+                            ]
+                          },
+                          {
+                            "SELECT": {
+                              "from": {
+                                "ref": [
+                                  "horvath.btp.staffing.PlannedDataFourMonths1"
+                                ]
+                              },
+                              "columns": [
+                                {
+                                  "ref": [
+                                    "ProjectID"
+                                  ]
+                                },
+                                {
+                                  "ref": [
+                                    "StaffedEmployee"
+                                  ]
+                                },
+                                {
+                                  "ref": [
+                                    "Month1"
+                                  ]
+                                }
+                              ]
+                            },
+                            "as": "PlannedDataFourMonths1"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "PlannedHours",
+                              "ProjectID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "PlannedDataFourMonths1",
+                              "ProjectID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "PlannedHours",
+                              "StaffedEmployee"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "PlannedDataFourMonths1",
+                              "StaffedEmployee"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "SELECT": {
+                          "from": {
+                            "ref": [
+                              "horvath.btp.staffing.PlannedDataFourMonths2"
+                            ]
+                          },
+                          "columns": [
+                            {
+                              "ref": [
+                                "ProjectID"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "StaffedEmployee"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "Month2"
+                              ]
+                            }
+                          ]
+                        },
+                        "as": "PlannedDataFourMonths2"
+                      }
+                    ],
+                    "on": [
+                      {
+                        "ref": [
+                          "PlannedHours",
+                          "ProjectID"
+                        ]
+                      },
+                      "=",
+                      {
+                        "ref": [
+                          "PlannedDataFourMonths2",
+                          "ProjectID"
+                        ]
+                      },
+                      "and",
+                      {
+                        "ref": [
+                          "PlannedHours",
+                          "StaffedEmployee"
+                        ]
+                      },
+                      "=",
+                      {
+                        "ref": [
+                          "PlannedDataFourMonths2",
+                          "StaffedEmployee"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "SELECT": {
+                      "from": {
+                        "ref": [
+                          "horvath.btp.staffing.PlannedDataFourMonths3"
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "ProjectID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "StaffedEmployee"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "Month3"
+                          ]
+                        }
+                      ]
+                    },
+                    "as": "PlannedDataFourMonths3"
+                  }
+                ],
+                "on": [
+                  {
+                    "ref": [
+                      "PlannedHours",
+                      "ProjectID"
+                    ]
+                  },
+                  "=",
+                  {
+                    "ref": [
+                      "PlannedDataFourMonths3",
+                      "ProjectID"
+                    ]
+                  },
+                  "and",
+                  {
+                    "ref": [
+                      "PlannedHours",
+                      "StaffedEmployee"
+                    ]
+                  },
+                  "=",
+                  {
+                    "ref": [
+                      "PlannedDataFourMonths3",
+                      "StaffedEmployee"
+                    ]
+                  }
+                ]
+              },
+              {
+                "SELECT": {
+                  "from": {
+                    "ref": [
+                      "horvath.btp.staffing.PlannedDataFourMonths4"
+                    ]
+                  },
+                  "columns": [
+                    {
+                      "ref": [
+                        "ProjectID"
+                      ]
+                    },
+                    {
+                      "ref": [
+                        "StaffedEmployee"
+                      ]
+                    },
+                    {
+                      "ref": [
+                        "Month4"
+                      ]
+                    }
+                  ]
+                },
+                "as": "PlannedDataFourMonths4"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "PlannedHours",
+                  "ProjectID"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "PlannedDataFourMonths4",
+                  "ProjectID"
+                ]
+              },
+              "and",
+              {
+                "ref": [
+                  "PlannedHours",
+                  "StaffedEmployee"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "PlannedDataFourMonths4",
+                  "StaffedEmployee"
+                ]
+              }
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "PlannedHours",
+                "ProjectID"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "PlannedHours",
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "ref": [
+                "Month1"
+              ]
+            },
+            {
+              "ref": [
+                "Month2"
+              ]
+            },
+            {
+              "ref": [
+                "Month3"
+              ]
+            },
+            {
+              "ref": [
+                "Month4"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month1": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month2": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month3": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month4": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.ActualDataFourMonths1": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.ActualHours"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "ProjectID"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "StaffedEffort"
+                  ]
+                }
+              ],
+              "xpr": [
+                "over",
+                {
+                  "xpr": [
+                    "partition",
+                    "by",
+                    {
+                      "ref": [
+                        "ProjectID"
+                      ]
+                    },
+                    ",",
+                    {
+                      "ref": [
+                        "StaffedEmployee"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "Month1",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            }
+          ],
+          "where": [
+            {
+              "list": [
+                {
+                  "ref": [
+                    "FiscalYear"
+                  ]
+                },
+                {
+                  "ref": [
+                    "Period"
+                  ]
+                }
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.YearMonth1"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month1": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.ActualDataFourMonths2": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.ActualHours"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "ProjectID"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "StaffedEffort"
+                  ]
+                }
+              ],
+              "xpr": [
+                "over",
+                {
+                  "xpr": [
+                    "partition",
+                    "by",
+                    {
+                      "ref": [
+                        "ProjectID"
+                      ]
+                    },
+                    ",",
+                    {
+                      "ref": [
+                        "StaffedEmployee"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "Month2",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            }
+          ],
+          "where": [
+            {
+              "list": [
+                {
+                  "ref": [
+                    "FiscalYear"
+                  ]
+                },
+                {
+                  "ref": [
+                    "Period"
+                  ]
+                }
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.YearMonth2"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month2": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.ActualDataFourMonths3": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.ActualHours"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "ProjectID"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "StaffedEffort"
+                  ]
+                }
+              ],
+              "xpr": [
+                "over",
+                {
+                  "xpr": [
+                    "partition",
+                    "by",
+                    {
+                      "ref": [
+                        "ProjectID"
+                      ]
+                    },
+                    ",",
+                    {
+                      "ref": [
+                        "StaffedEmployee"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "Month3",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            }
+          ],
+          "where": [
+            {
+              "list": [
+                {
+                  "ref": [
+                    "FiscalYear"
+                  ]
+                },
+                {
+                  "ref": [
+                    "Period"
+                  ]
+                }
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.YearMonth3"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month3": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.ActualDataFourMonths4": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.ActualHours"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "ProjectID"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "StaffedEffort"
+                  ]
+                }
+              ],
+              "xpr": [
+                "over",
+                {
+                  "xpr": [
+                    "partition",
+                    "by",
+                    {
+                      "ref": [
+                        "ProjectID"
+                      ]
+                    },
+                    ",",
+                    {
+                      "ref": [
+                        "StaffedEmployee"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "Month4",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            }
+          ],
+          "where": [
+            {
+              "list": [
+                {
+                  "ref": [
+                    "FiscalYear"
+                  ]
+                },
+                {
+                  "ref": [
+                    "Period"
+                  ]
+                }
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.YearMonth4"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month4": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.ActualDataUnionProjects": {
+      "kind": "entity",
+      "query": {
+        "SET": {
+          "op": "union",
+          "all": true,
+          "args": [
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.ActualDataFourMonths1"
+                  ]
+                },
+                "distinct": true,
+                "columns": [
+                  {
+                    "ref": [
+                      "ProjectID"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "StaffedEmployee"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.ActualDataFourMonths2"
+                  ]
+                },
+                "distinct": true,
+                "columns": [
+                  {
+                    "ref": [
+                      "ProjectID"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "StaffedEmployee"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.ActualDataFourMonths3"
+                  ]
+                },
+                "distinct": true,
+                "columns": [
+                  {
+                    "ref": [
+                      "ProjectID"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "StaffedEmployee"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.ActualDataFourMonths4"
+                  ]
+                },
+                "distinct": true,
+                "columns": [
+                  {
+                    "ref": [
+                      "ProjectID"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "StaffedEmployee"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "type": "cds.String",
+          "length": 8
+        }
+      }
+    },
+    "horvath.btp.staffing.ActualDataFourMonths": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "left",
+            "args": [
+              {
+                "join": "left",
+                "args": [
+                  {
+                    "join": "left",
+                    "args": [
+                      {
+                        "join": "left",
+                        "args": [
+                          {
+                            "ref": [
+                              "horvath.btp.staffing.ActualDataUnionProjects"
+                            ]
+                          },
+                          {
+                            "SELECT": {
+                              "from": {
+                                "ref": [
+                                  "horvath.btp.staffing.ActualDataFourMonths1"
+                                ]
+                              },
+                              "columns": [
+                                {
+                                  "ref": [
+                                    "ProjectID"
+                                  ]
+                                },
+                                {
+                                  "ref": [
+                                    "StaffedEmployee"
+                                  ]
+                                },
+                                {
+                                  "ref": [
+                                    "Month1"
+                                  ]
+                                }
+                              ]
+                            },
+                            "as": "ActualDataFourMonths1"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "ActualDataUnionProjects",
+                              "ProjectID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "ActualDataFourMonths1",
+                              "ProjectID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "ActualDataUnionProjects",
+                              "StaffedEmployee"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "ActualDataFourMonths1",
+                              "StaffedEmployee"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "SELECT": {
+                          "from": {
+                            "ref": [
+                              "horvath.btp.staffing.ActualDataFourMonths2"
+                            ]
+                          },
+                          "columns": [
+                            {
+                              "ref": [
+                                "ProjectID"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "StaffedEmployee"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "Month2"
+                              ]
+                            }
+                          ]
+                        },
+                        "as": "ActualDataFourMonths2"
+                      }
+                    ],
+                    "on": [
+                      {
+                        "ref": [
+                          "ActualDataUnionProjects",
+                          "ProjectID"
+                        ]
+                      },
+                      "=",
+                      {
+                        "ref": [
+                          "ActualDataFourMonths2",
+                          "ProjectID"
+                        ]
+                      },
+                      "and",
+                      {
+                        "ref": [
+                          "ActualDataUnionProjects",
+                          "StaffedEmployee"
+                        ]
+                      },
+                      "=",
+                      {
+                        "ref": [
+                          "ActualDataFourMonths2",
+                          "StaffedEmployee"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "SELECT": {
+                      "from": {
+                        "ref": [
+                          "horvath.btp.staffing.ActualDataFourMonths3"
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "ProjectID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "StaffedEmployee"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "Month3"
+                          ]
+                        }
+                      ]
+                    },
+                    "as": "ActualDataFourMonths3"
+                  }
+                ],
+                "on": [
+                  {
+                    "ref": [
+                      "ActualDataUnionProjects",
+                      "ProjectID"
+                    ]
+                  },
+                  "=",
+                  {
+                    "ref": [
+                      "ActualDataFourMonths3",
+                      "ProjectID"
+                    ]
+                  },
+                  "and",
+                  {
+                    "ref": [
+                      "ActualDataUnionProjects",
+                      "StaffedEmployee"
+                    ]
+                  },
+                  "=",
+                  {
+                    "ref": [
+                      "ActualDataFourMonths3",
+                      "StaffedEmployee"
+                    ]
+                  }
+                ]
+              },
+              {
+                "SELECT": {
+                  "from": {
+                    "ref": [
+                      "horvath.btp.staffing.ActualDataFourMonths4"
+                    ]
+                  },
+                  "columns": [
+                    {
+                      "ref": [
+                        "ProjectID"
+                      ]
+                    },
+                    {
+                      "ref": [
+                        "StaffedEmployee"
+                      ]
+                    },
+                    {
+                      "ref": [
+                        "Month4"
+                      ]
+                    }
+                  ]
+                },
+                "as": "ActualDataFourMonths4"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "ActualDataUnionProjects",
+                  "ProjectID"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "ActualDataFourMonths4",
+                  "ProjectID"
+                ]
+              },
+              "and",
+              {
+                "ref": [
+                  "ActualDataUnionProjects",
+                  "StaffedEmployee"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "ActualDataFourMonths4",
+                  "StaffedEmployee"
+                ]
+              }
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "ActualDataUnionProjects",
+                "ProjectID"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "ActualDataUnionProjects",
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "ref": [
+                "Month1"
+              ]
+            },
+            {
+              "ref": [
+                "Month2"
+              ]
+            },
+            {
+              "ref": [
+                "Month3"
+              ]
+            },
+            {
+              "ref": [
+                "Month4"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month1": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month2": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month3": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month4": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.PlannedDataExcludingEmpty": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.PlannedDataFourMonths"
+            ]
+          },
+          "columns": [
+            "*"
+          ],
+          "where": [
+            "not",
+            {
+              "xpr": [
+                {
+                  "ref": [
+                    "Month1"
+                  ]
+                },
+                "is",
+                "null",
+                "and",
+                {
+                  "ref": [
+                    "Month2"
+                  ]
+                },
+                "is",
+                "null",
+                "and",
+                {
+                  "ref": [
+                    "Month3"
+                  ]
+                },
+                "is",
+                "null",
+                "and",
+                {
+                  "ref": [
+                    "Month4"
+                  ]
+                },
+                "is",
+                "null"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month1": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month2": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month3": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month4": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.ActualDataExcludingEmpty": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.ActualDataFourMonths"
+            ]
+          },
+          "columns": [
+            "*"
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month1": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month2": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month3": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month4": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.UnionPlannedActualProjectEmployee": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.ActualDataExcludingEmpty"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "ProjectID"
+              ]
+            },
+            {
+              "ref": [
+                "StaffedEmployee"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        }
+      }
+    },
+    "horvath.btp.staffing.ActualPlannedDataFourMonthsView": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "left",
+            "args": [
+              {
+                "join": "left",
+                "args": [
+                  {
+                    "ref": [
+                      "horvath.btp.staffing.UnionPlannedActualProjectEmployee"
+                    ]
+                  },
+                  {
+                    "SELECT": {
+                      "from": {
+                        "ref": [
+                          "horvath.btp.staffing.ActualDataExcludingEmpty"
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "ProjectID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "StaffedEmployee"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "Month1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "Month2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "Month3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "Month4"
+                          ]
+                        }
+                      ]
+                    },
+                    "as": "ActualDataExcludingEmpty"
+                  }
+                ],
+                "on": [
+                  {
+                    "ref": [
+                      "UnionPlannedActualProjectEmployee",
+                      "ProjectID"
+                    ]
+                  },
+                  "=",
+                  {
+                    "ref": [
+                      "ActualDataExcludingEmpty",
+                      "ProjectID"
+                    ]
+                  },
+                  "and",
+                  {
+                    "ref": [
+                      "UnionPlannedActualProjectEmployee",
+                      "StaffedEmployee"
+                    ]
+                  },
+                  "=",
+                  {
+                    "ref": [
+                      "ActualDataExcludingEmpty",
+                      "StaffedEmployee"
+                    ]
+                  }
+                ]
+              },
+              {
+                "SELECT": {
+                  "from": {
+                    "ref": [
+                      "horvath.btp.staffing.Project"
+                    ]
+                  }
+                },
+                "as": "ProjectData"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "UnionPlannedActualProjectEmployee",
+                  "ProjectID"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "ProjectData",
+                  "ProjectID"
+                ]
+              }
+            ]
+          },
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "UnionPlannedActualProjectEmployee",
+                "ProjectID"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectName"
+              ]
+            },
+            {
+              "ref": [
+                "CustomerName"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "UnionPlannedActualProjectEmployee",
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "ref": [
+                "ActualDataExcludingEmpty",
+                "Month1"
+              ],
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            },
+            {
+              "ref": [
+                "ActualDataExcludingEmpty",
+                "Month2"
+              ],
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            },
+            {
+              "ref": [
+                "ActualDataExcludingEmpty",
+                "Month3"
+              ],
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            },
+            {
+              "ref": [
+                "ActualDataExcludingEmpty",
+                "Month4"
+              ],
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            },
+            {
+              "ref": [
+                "StartDate"
+              ]
+            },
+            {
+              "ref": [
+                "EndDate"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "ProjectName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "CustomerName": {
+          "type": "cds.String",
+          "length": 166
+        },
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month1": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month2": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month3": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month4": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "StartDate": {
+          "type": "cds.Date"
+        },
+        "EndDate": {
+          "type": "cds.Date"
+        }
+      }
+    },
+    "horvath.btp.staffing.ActualPlannedDataAggregatedView": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.ActualPlannedDataFourMonthsView"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "StaffedEmployee"
+              ]
+            },
+            {
+              "xpr": [
+                {
+                  "func": "IFNULL",
+                  "args": [
+                    {
+                      "func": "SUM",
+                      "args": [
+                        {
+                          "ref": [
+                            "Month1"
+                          ]
+                        }
+                      ],
+                      "xpr": [
+                        "over",
+                        {
+                          "xpr": [
+                            "partition",
+                            "by",
+                            {
+                              "ref": [
+                                "StaffedEmployee"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ],
+                  "cast": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 2
+                  }
+                }
+              ],
+              "as": "Month1",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            },
+            {
+              "xpr": [
+                {
+                  "func": "IFNULL",
+                  "args": [
+                    {
+                      "func": "SUM",
+                      "args": [
+                        {
+                          "ref": [
+                            "Month2"
+                          ]
+                        }
+                      ],
+                      "xpr": [
+                        "over",
+                        {
+                          "xpr": [
+                            "partition",
+                            "by",
+                            {
+                              "ref": [
+                                "StaffedEmployee"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ],
+                  "cast": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 2
+                  }
+                }
+              ],
+              "as": "Month2",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            },
+            {
+              "xpr": [
+                {
+                  "func": "IFNULL",
+                  "args": [
+                    {
+                      "func": "SUM",
+                      "args": [
+                        {
+                          "ref": [
+                            "Month3"
+                          ]
+                        }
+                      ],
+                      "xpr": [
+                        "over",
+                        {
+                          "xpr": [
+                            "partition",
+                            "by",
+                            {
+                              "ref": [
+                                "StaffedEmployee"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ],
+                  "cast": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 2
+                  }
+                }
+              ],
+              "as": "Month3",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            },
+            {
+              "xpr": [
+                {
+                  "func": "IFNULL",
+                  "args": [
+                    {
+                      "func": "SUM",
+                      "args": [
+                        {
+                          "ref": [
+                            "Month4"
+                          ]
+                        }
+                      ],
+                      "xpr": [
+                        "over",
+                        {
+                          "xpr": [
+                            "partition",
+                            "by",
+                            {
+                              "ref": [
+                                "StaffedEmployee"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ],
+                  "cast": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 2
+                  }
+                }
+              ],
+              "as": "Month4",
+              "cast": {
+                "type": "cds.Decimal",
+                "precision": 15,
+                "scale": 2
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "StaffedEmployee": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month1": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month2": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month3": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month4": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.Totals": {
+      "kind": "entity",
+      "query": {
+        "SET": {
+          "op": "union",
+          "all": true,
+          "args": [
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.DUMMY"
+                  ]
+                },
+                "columns": [
+                  {
+                    "key": true,
+                    "val": 1,
+                    "as": "Position",
+                    "cast": {
+                      "type": "cds.Integer"
+                    }
+                  },
+                  {
+                    "val": "Project Assigned",
+                    "as": "PositionText",
+                    "cast": {
+                      "type": "cds.String",
+                      "length": 100
+                    }
+                  },
+                  {
+                    "key": true,
+                    "val": null,
+                    "as": "StaffedEmployee",
+                    "cast": {
+                      "type": "cds.String",
+                      "length": 8
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month1",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month2",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month3",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month4",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": false,
+                    "as": "SetColor",
+                    "cast": {
+                      "type": "cds.Boolean"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.DUMMY"
+                  ]
+                },
+                "distinct": true,
+                "columns": [
+                  {
+                    "key": true,
+                    "val": 2,
+                    "as": "Position",
+                    "cast": {
+                      "type": "cds.Integer"
+                    }
+                  },
+                  {
+                    "val": "Available Days Net (excl. e.g. public holidays, vacation, sick leave from WorkDay)",
+                    "as": "PositionText",
+                    "cast": {
+                      "type": "cds.String",
+                      "length": 100
+                    }
+                  },
+                  {
+                    "key": true,
+                    "val": null,
+                    "as": "StaffedEmployee",
+                    "cast": {
+                      "type": "cds.String",
+                      "length": 8
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month1",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month2",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month3",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month4",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": false,
+                    "as": "SetColor",
+                    "cast": {
+                      "type": "cds.Boolean"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.DUMMY"
+                  ]
+                },
+                "distinct": true,
+                "columns": [
+                  {
+                    "key": true,
+                    "val": 3,
+                    "as": "Position",
+                    "cast": {
+                      "type": "cds.Integer"
+                    }
+                  },
+                  {
+                    "val": "Remaining Days",
+                    "as": "PositionText",
+                    "cast": {
+                      "type": "cds.String",
+                      "length": 100
+                    }
+                  },
+                  {
+                    "key": true,
+                    "val": null,
+                    "as": "StaffedEmployee",
+                    "cast": {
+                      "type": "cds.String",
+                      "length": 8
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month1",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month2",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month3",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month4",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": false,
+                    "as": "SetColor",
+                    "cast": {
+                      "type": "cds.Boolean"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.DUMMY"
+                  ]
+                },
+                "distinct": true,
+                "columns": [
+                  {
+                    "key": true,
+                    "val": 4,
+                    "as": "Position",
+                    "cast": {
+                      "type": "cds.Integer"
+                    }
+                  },
+                  {
+                    "val": "Utilization (%)",
+                    "as": "PositionText",
+                    "cast": {
+                      "type": "cds.String",
+                      "length": 100
+                    }
+                  },
+                  {
+                    "key": true,
+                    "val": null,
+                    "as": "StaffedEmployee",
+                    "cast": {
+                      "type": "cds.String",
+                      "length": 8
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month1",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month2",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month3",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": null,
+                    "as": "Month4",
+                    "cast": {
+                      "type": "cds.Decimal",
+                      "precision": 15,
+                      "scale": 2
+                    }
+                  },
+                  {
+                    "val": false,
+                    "as": "SetColor",
+                    "cast": {
+                      "type": "cds.Boolean"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "Position": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "PositionText": {
+          "@Core.Computed": true,
+          "type": "cds.String",
+          "length": 100
+        },
+        "StaffedEmployee": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.String",
+          "length": 8
+        },
+        "Month1": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month2": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month3": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "Month4": {
+          "@Core.Computed": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "SetColor": {
+          "@Core.Computed": true,
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "horvath.btp.staffing.TimeDimWithCurDateIndicator": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "left",
+            "args": [
+              {
+                "ref": [
+                  "horvath.btp.staffing.M_TIME_DIMENSION"
+                ],
+                "as": "TD"
+              },
+              {
+                "SELECT": {
+                  "from": {
+                    "ref": [
+                      "horvath.btp.staffing.DUMMY"
+                    ]
+                  },
+                  "columns": [
+                    {
+                      "func": "current_date",
+                      "as": "CUR_DATE"
+                    }
+                  ]
+                },
+                "as": "CD"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "TD",
+                  "DATE_SQL"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "CD",
+                  "CUR_DATE"
+                ]
+              }
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "TD",
+                "DATE_SQL"
+              ]
+            },
+            {
+              "ref": [
+                "TD",
+                "YEAR"
+              ]
+            },
+            {
+              "ref": [
+                "TD",
+                "MONTH"
+              ]
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "CD",
+                    "CUR_DATE"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "then",
+                {
+                  "val": true
+                },
+                "else",
+                {
+                  "val": false
+                },
+                "end"
+              ],
+              "as": "CurrentDateIndicator",
+              "cast": {
+                "type": "cds.Boolean"
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "DATE_SQL": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "YEAR": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "MONTH": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CurrentDateIndicator": {
+          "@Core.Computed": true,
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "horvath.btp.staffing.YearMonthCurrentDate": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.TimeDimWithCurDateIndicator"
+            ]
+          },
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "YEAR"
+              ]
+            },
+            {
+              "key": true,
+              "ref": [
+                "MONTH"
+              ]
+            },
+            {
+              "val": true,
+              "as": "CurrentYearMonthIndicator",
+              "cast": {
+                "type": "cds.Boolean"
+              }
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "CurrentDateIndicator"
+              ]
+            },
+            "=",
+            {
+              "val": true
+            }
+          ]
+        }
+      },
+      "elements": {
+        "YEAR": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "MONTH": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "CurrentYearMonthIndicator": {
+          "@Core.Computed": true,
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "horvath.btp.staffing.UniqueYearMonth": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.M_TIME_DIMENSION"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "ref": [
+                "YEAR"
+              ]
+            },
+            {
+              "ref": [
+                "MONTH"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "YEAR": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "MONTH": {
+          "type": "cds.String",
+          "length": 2
+        }
+      }
+    },
+    "horvath.btp.staffing.AllYearMonthRowNumber": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "left",
+            "args": [
+              {
+                "ref": [
+                  "horvath.btp.staffing.UniqueYearMonth"
+                ],
+                "as": "UYM"
+              },
+              {
+                "SELECT": {
+                  "from": {
+                    "ref": [
+                      "horvath.btp.staffing.YearMonthCurrentDate"
+                    ]
+                  },
+                  "columns": [
+                    {
+                      "ref": [
+                        "YEAR"
+                      ]
+                    },
+                    {
+                      "ref": [
+                        "MONTH"
+                      ]
+                    },
+                    {
+                      "ref": [
+                        "CurrentYearMonthIndicator"
+                      ]
+                    }
+                  ]
+                },
+                "as": "YMCD"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "UYM",
+                  "YEAR"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "YMCD",
+                  "YEAR"
+                ]
+              },
+              "and",
+              {
+                "ref": [
+                  "UYM",
+                  "MONTH"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "YMCD",
+                  "MONTH"
+                ]
+              }
+            ]
+          },
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "UYM",
+                "YEAR"
+              ]
+            },
+            {
+              "key": true,
+              "xpr": [
+                {
+                  "val": "0"
+                },
+                "||",
+                {
+                  "ref": [
+                    "UYM",
+                    "MONTH"
+                  ]
+                }
+              ],
+              "as": "MONTH",
+              "cast": {
+                "type": "cds.String",
+                "length": 3
+              }
+            },
+            {
+              "func": "ROW_NUMBER",
+              "args": [],
+              "xpr": [
+                "over",
+                {
+                  "xpr": [
+                    "order",
+                    "by",
+                    {
+                      "ref": [
+                        "UYM",
+                        "YEAR"
+                      ]
+                    },
+                    ",",
+                    {
+                      "ref": [
+                        "UYM",
+                        "MONTH"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "RowNumber",
+              "cast": {
+                "type": "cds.Integer"
+              }
+            },
+            {
+              "ref": [
+                "CurrentYearMonthIndicator"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "YEAR": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "MONTH": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "RowNumber": {
+          "@Core.Computed": true,
+          "type": "cds.Integer"
+        },
+        "CurrentYearMonthIndicator": {
+          "@Core.Computed": true,
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "horvath.btp.staffing.Month1RowNumber": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.AllYearMonthRowNumber"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "RowNumber"
+              ],
+              "as": "Month1RowNumber",
+              "cast": {
+                "type": "cds.Integer"
+              }
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "CurrentYearMonthIndicator"
+              ]
+            },
+            "=",
+            {
+              "val": true
+            }
+          ]
+        }
+      },
+      "elements": {
+        "Month1RowNumber": {
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "horvath.btp.staffing.Month2RowNumber": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.AllYearMonthRowNumber"
+            ]
+          },
+          "columns": [
+            {
+              "xpr": [
+                {
+                  "ref": [
+                    "RowNumber"
+                  ]
+                },
+                "+",
+                {
+                  "val": 1
+                }
+              ],
+              "as": "Month2RowNumber",
+              "cast": {
+                "type": "cds.Integer"
+              }
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "CurrentYearMonthIndicator"
+              ]
+            },
+            "=",
+            {
+              "val": true
+            }
+          ]
+        }
+      },
+      "elements": {
+        "Month2RowNumber": {
+          "@Core.Computed": true,
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "horvath.btp.staffing.Month3RowNumber": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.AllYearMonthRowNumber"
+            ]
+          },
+          "columns": [
+            {
+              "xpr": [
+                {
+                  "ref": [
+                    "RowNumber"
+                  ]
+                },
+                "+",
+                {
+                  "val": 2
+                }
+              ],
+              "as": "Month3RowNumber",
+              "cast": {
+                "type": "cds.Integer"
+              }
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "CurrentYearMonthIndicator"
+              ]
+            },
+            "=",
+            {
+              "val": true
+            }
+          ]
+        }
+      },
+      "elements": {
+        "Month3RowNumber": {
+          "@Core.Computed": true,
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "horvath.btp.staffing.Month4RowNumber": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.AllYearMonthRowNumber"
+            ]
+          },
+          "columns": [
+            {
+              "xpr": [
+                {
+                  "ref": [
+                    "RowNumber"
+                  ]
+                },
+                "+",
+                {
+                  "val": 3
+                }
+              ],
+              "as": "Month4RowNumber",
+              "cast": {
+                "type": "cds.Integer"
+              }
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "CurrentYearMonthIndicator"
+              ]
+            },
+            "=",
+            {
+              "val": true
+            }
+          ]
+        }
+      },
+      "elements": {
+        "Month4RowNumber": {
+          "@Core.Computed": true,
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "horvath.btp.staffing.YearMonth1": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.AllYearMonthRowNumber"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "YEAR"
+              ]
+            },
+            {
+              "ref": [
+                "MONTH"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "RowNumber"
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.Month1RowNumber"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "YEAR": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "MONTH": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "horvath.btp.staffing.YearMonth2": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.AllYearMonthRowNumber"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "YEAR"
+              ]
+            },
+            {
+              "ref": [
+                "MONTH"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "RowNumber"
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.Month2RowNumber"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "YEAR": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "MONTH": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "horvath.btp.staffing.YearMonth3": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.AllYearMonthRowNumber"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "YEAR"
+              ]
+            },
+            {
+              "ref": [
+                "MONTH"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "RowNumber"
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.Month3RowNumber"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "YEAR": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "MONTH": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "horvath.btp.staffing.YearMonth4": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.AllYearMonthRowNumber"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "YEAR"
+              ]
+            },
+            {
+              "ref": [
+                "MONTH"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "RowNumber"
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.Month4RowNumber"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "YEAR": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "MONTH": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "horvath.btp.staffing.Test": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "horvath.btp.staffing.AllYearMonthRowNumber"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "YEAR"
+              ]
+            },
+            {
+              "ref": [
+                "MONTH"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "RowNumber"
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "horvath.btp.staffing.Month4RowNumber"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "YEAR": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "MONTH": {
+          "@Core.Computed": true,
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "customManaged": {
+      "kind": "aspect",
+      "elements": {
+        "CreatedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "type": "cds.Timestamp"
+        },
+        "CreatedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@title": "{i18n>UserID}",
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "ModifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "type": "cds.Timestamp"
+        },
+        "ModifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@title": "{i18n>UserID}",
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        }
+      }
+    },
+    "Language": {
+      "kind": "type",
+      "@title": "{i18n>Language}",
+      "@description": "{i18n>LanguageCode.Description}",
+      "type": "cds.Association",
+      "target": "sap.common.Languages",
+      "keys": [
+        {
+          "ref": [
+            "code"
+          ]
+        }
+      ]
+    },
+    "Currency": {
+      "kind": "type",
+      "@title": "{i18n>Currency}",
+      "@description": "{i18n>CurrencyCode.Description}",
+      "type": "cds.Association",
+      "target": "sap.common.Currencies",
+      "keys": [
+        {
+          "ref": [
+            "code"
+          ]
+        }
+      ]
+    },
+    "Country": {
+      "kind": "type",
+      "@title": "{i18n>Country}",
+      "@description": "{i18n>CountryCode.Description}",
+      "type": "cds.Association",
+      "target": "sap.common.Countries",
+      "keys": [
+        {
+          "ref": [
+            "code"
+          ]
+        }
+      ]
+    },
+    "Timezone": {
+      "kind": "type",
+      "type": "cds.Association",
+      "target": "sap.common.Timezones",
+      "keys": [
+        {
+          "ref": [
+            "code"
+          ]
+        }
+      ]
+    },
+    "sap.common": {
+      "kind": "context"
+    },
+    "sap.common.Locale": {
+      "kind": "type",
+      "@title": "{i18n>LanguageCode}",
+      "type": "cds.String",
+      "length": 14
+    },
+    "sap.common.Languages": {
+      "kind": "entity",
+      "@cds.autoexpose": true,
+      "@cds.persistence.skip": "if-unused",
+      "@UI.Identification": [
+        {
+          "Value": {
+            "=": "name"
+          }
+        }
+      ],
+      "@cds.odata.valuelist": true,
+      "includes": [
+        "sap.common.CodeList"
+      ],
+      "elements": {
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@Common.Text": {
+            "=": "name"
+          },
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        },
+        "texts": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "sap.common.Languages.texts",
+          "on": [
+            {
+              "ref": [
+                "texts",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
+        },
+        "localized": {
+          "type": "cds.Association",
+          "target": "sap.common.Languages.texts",
+          "on": [
+            {
+              "ref": [
+                "localized",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "localized",
+                "locale"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$user",
+                "locale"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "sap.common.Countries": {
+      "kind": "entity",
+      "@cds.autoexpose": true,
+      "@cds.persistence.skip": "if-unused",
+      "@UI.Identification": [
+        {
+          "Value": {
+            "=": "name"
+          }
+        }
+      ],
+      "@cds.odata.valuelist": true,
+      "includes": [
+        "sap.common.CodeList"
+      ],
+      "elements": {
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@title": "{i18n>CountryCode}",
+          "@Common.Text": {
+            "=": "name"
+          },
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "texts": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "sap.common.Countries.texts",
+          "on": [
+            {
+              "ref": [
+                "texts",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
+        },
+        "localized": {
+          "type": "cds.Association",
+          "target": "sap.common.Countries.texts",
+          "on": [
+            {
+              "ref": [
+                "localized",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "localized",
+                "locale"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$user",
+                "locale"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "sap.common.Currencies": {
+      "kind": "entity",
+      "@cds.autoexpose": true,
+      "@cds.persistence.skip": "if-unused",
+      "@UI.Identification": [
+        {
+          "Value": {
+            "=": "name"
+          }
+        }
+      ],
+      "@cds.odata.valuelist": true,
+      "includes": [
+        "sap.common.CodeList"
+      ],
+      "elements": {
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@title": "{i18n>CurrencyCode}",
+          "@Common.Text": {
+            "=": "name"
+          },
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "symbol": {
+          "@title": "{i18n>CurrencySymbol}",
+          "type": "cds.String",
+          "length": 5
+        },
+        "minorUnit": {
+          "@title": "{i18n>CurrencyMinorUnit}",
+          "type": "cds.Int16"
+        },
+        "texts": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "sap.common.Currencies.texts",
+          "on": [
+            {
+              "ref": [
+                "texts",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
+        },
+        "localized": {
+          "type": "cds.Association",
+          "target": "sap.common.Currencies.texts",
+          "on": [
+            {
+              "ref": [
+                "localized",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "localized",
+                "locale"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$user",
+                "locale"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "sap.common.Timezones": {
+      "kind": "entity",
+      "@cds.autoexpose": true,
+      "@cds.persistence.skip": "if-unused",
+      "@UI.Identification": [
+        {
+          "Value": {
+            "=": "name"
+          }
+        }
+      ],
+      "@cds.odata.valuelist": true,
+      "includes": [
+        "sap.common.CodeList"
+      ],
+      "elements": {
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@title": "{i18n>TimeZoneCode}",
+          "key": true,
+          "type": "cds.String",
+          "length": 100
+        },
+        "texts": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "sap.common.Timezones.texts",
+          "on": [
+            {
+              "ref": [
+                "texts",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
+        },
+        "localized": {
+          "type": "cds.Association",
+          "target": "sap.common.Timezones.texts",
+          "on": [
+            {
+              "ref": [
+                "localized",
+                "code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "code"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "localized",
+                "locale"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$user",
+                "locale"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "sap.common.CodeList": {
+      "kind": "aspect",
+      "@cds.autoexpose": true,
+      "@cds.persistence.skip": "if-unused",
+      "@UI.Identification": [
+        {
+          "Value": {
+            "=": "name"
+          }
+        }
+      ],
+      "@cds.odata.valuelist": true,
+      "elements": {
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": true,
+          "type": "cds.String",
+          "length": 1000
+        }
+      }
+    },
+    "sap.common.TextsAspect": {
+      "kind": "aspect",
+      "elements": {
+        "locale": {
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        }
+      }
+    },
+    "cuid": {
+      "kind": "aspect",
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.UUID"
+        }
+      }
+    },
+    "managed": {
+      "kind": "aspect",
+      "elements": {
+        "createdAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "createdBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@Core.Immutable": true,
+          "@title": "{i18n>CreatedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        },
+        "modifiedAt": {
+          "@cds.on.insert": {
+            "=": "$now"
+          },
+          "@cds.on.update": {
+            "=": "$now"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
+        "modifiedBy": {
+          "@cds.on.insert": {
+            "=": "$user"
+          },
+          "@cds.on.update": {
+            "=": "$user"
+          },
+          "@UI.HiddenFilter": true,
+          "@UI.ExcludeFromNavigationContext": true,
+          "@title": "{i18n>ChangedBy}",
+          "@readonly": true,
+          "@description": "{i18n>UserID.Description}",
+          "type": "User",
+          "length": 255
+        }
+      }
+    },
+    "temporal": {
+      "kind": "aspect",
+      "elements": {
+        "validFrom": {
+          "@cds.valid.from": true,
+          "type": "cds.Timestamp"
+        },
+        "validTo": {
+          "@cds.valid.to": true,
+          "type": "cds.Timestamp"
+        }
+      }
+    },
+    "User": {
+      "kind": "type",
+      "@title": "{i18n>UserID}",
+      "@description": "{i18n>UserID.Description}",
+      "type": "cds.String",
+      "length": 255
+    },
+    "sap.common.Languages.texts": {
+      "kind": "entity",
+      "@odata.draft.enabled": false,
+      "includes": [
+        "sap.common.TextsAspect"
+      ],
+      "elements": {
+        "locale": {
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        },
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@odata.containment.ignore": true,
+          "@Common.Text": {
+            "=": "name"
+          },
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        }
+      }
+    },
+    "sap.common.Countries.texts": {
+      "kind": "entity",
+      "@odata.draft.enabled": false,
+      "includes": [
+        "sap.common.TextsAspect"
+      ],
+      "elements": {
+        "locale": {
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        },
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@odata.containment.ignore": true,
+          "@title": "{i18n>CountryCode}",
+          "@Common.Text": {
+            "=": "name"
+          },
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "sap.common.Currencies.texts": {
+      "kind": "entity",
+      "@odata.draft.enabled": false,
+      "includes": [
+        "sap.common.TextsAspect"
+      ],
+      "elements": {
+        "locale": {
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        },
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@odata.containment.ignore": true,
+          "@title": "{i18n>CurrencyCode}",
+          "@Common.Text": {
+            "=": "name"
+          },
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "sap.common.Timezones.texts": {
+      "kind": "entity",
+      "@odata.draft.enabled": false,
+      "includes": [
+        "sap.common.TextsAspect"
+      ],
+      "elements": {
+        "locale": {
+          "@title": "{i18n>LanguageCode}",
+          "key": true,
+          "type": "sap.common.Locale",
+          "length": 14
+        },
+        "name": {
+          "@title": "{i18n>Name}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 255
+        },
+        "descr": {
+          "@title": "{i18n>Description}",
+          "localized": null,
+          "type": "cds.String",
+          "length": 1000
+        },
+        "code": {
+          "@odata.containment.ignore": true,
+          "@title": "{i18n>TimeZoneCode}",
+          "key": true,
+          "type": "cds.String",
+          "length": 100
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v5.3.2",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

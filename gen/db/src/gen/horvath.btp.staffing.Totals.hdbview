@@ -1,0 +1,40 @@
+VIEW horvath_btp_staffing_Totals AS SELECT
+  1 AS Position,
+  'Project Assigned' AS PositionText,
+  NULL AS StaffedEmployee,
+  NULL AS Month1,
+  NULL AS Month2,
+  NULL AS Month3,
+  NULL AS Month4,
+  FALSE AS SetColor
+FROM horvath_btp_staffing_DUMMY AS DUMMY_0
+UNION ALL SELECT DISTINCT
+  2 AS Position,
+  'Available Days Net (excl. e.g. public holidays, vacation, sick leave from WorkDay)' AS PositionText,
+  NULL AS StaffedEmployee,
+  NULL AS Month1,
+  NULL AS Month2,
+  NULL AS Month3,
+  NULL AS Month4,
+  FALSE AS SetColor
+FROM horvath_btp_staffing_DUMMY AS DUMMY_1
+UNION ALL SELECT DISTINCT
+  3 AS Position,
+  'Remaining Days' AS PositionText,
+  NULL AS StaffedEmployee,
+  NULL AS Month1,
+  NULL AS Month2,
+  NULL AS Month3,
+  NULL AS Month4,
+  FALSE AS SetColor
+FROM horvath_btp_staffing_DUMMY AS DUMMY_2
+UNION ALL SELECT DISTINCT
+  4 AS Position,
+  'Utilization (%)' AS PositionText,
+  NULL AS StaffedEmployee,
+  NULL AS Month1,
+  NULL AS Month2,
+  NULL AS Month3,
+  NULL AS Month4,
+  FALSE AS SetColor
+FROM horvath_btp_staffing_DUMMY AS DUMMY_3

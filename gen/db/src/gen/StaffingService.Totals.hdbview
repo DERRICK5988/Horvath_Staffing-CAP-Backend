@@ -1,0 +1,10 @@
+VIEW StaffingService_Totals AS SELECT
+  Totals_0.Position,
+  Totals_0.PositionText,
+  Totals_0.StaffedEmployee,
+  Totals_0.Month1,
+  Totals_0.Month2,
+  Totals_0.Month3,
+  Totals_0.Month4,
+  Totals_0.SetColor
+FROM horvath_btp_staffing_Totals AS Totals_0

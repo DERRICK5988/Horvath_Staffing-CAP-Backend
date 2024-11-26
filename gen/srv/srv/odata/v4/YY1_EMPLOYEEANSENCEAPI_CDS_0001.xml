@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema Namespace="YY1_EMPLOYEEANSENCEAPI_CDS_0001" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <Annotation Term="Core.Links">
+        <Collection>
+          <Record>
+            <PropertyValue Property="rel" String="author"/>
+            <PropertyValue Property="href" String="https://cap.cloud.sap"/>
+          </Record>
+        </Collection>
+      </Annotation>
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="YY1_EmployeeAnsenceAPI" EntityType="YY1_EMPLOYEEANSENCEAPI_CDS_0001.YY1_EmployeeAnsenceAPI"/>
+      </EntityContainer>
+      <EntityType Name="YY1_EmployeeAnsenceAPI">
+        <Key>
+          <PropertyRef Name="ID"/>
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false"/>
+        <Property Name="PersonWorkAgreement" Type="Edm.String" MaxLength="8"/>
+        <Property Name="CalendarDate" Type="Edm.Date"/>
+        <Property Name="PersonFullName" Type="Edm.String" MaxLength="80"/>
+        <Property Name="FiscalYear" Type="Edm.String" MaxLength="4"/>
+        <Property Name="FiscalPeriod" Type="Edm.String" MaxLength="3"/>
+        <Property Name="AbsenceInHours" Type="Edm.Decimal" Precision="15" Scale="2"/>
+        <Property Name="PlannedWorkingHours" Type="Edm.Decimal" Precision="15" Scale="2"/>
+        <Property Name="PersonHours" Type="Edm.Decimal" Precision="15" Scale="2"/>
+      </EntityType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

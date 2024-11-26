@@ -1,0 +1,14 @@
+COLUMN TABLE StaffingService_ActualPlannedDataFourMonths (
+  ProjectID NVARCHAR(40) NOT NULL,
+  StaffedEmployee NVARCHAR(8) NOT NULL,
+  ProjectName NVARCHAR(40),
+  CustomerName NVARCHAR(166),
+  PrevMonth1 DECIMAL(15, 2),
+  Month1 DECIMAL(15, 2),
+  Month2 DECIMAL(15, 2),
+  Month3 DECIMAL(15, 2),
+  Month4 DECIMAL(15, 2),
+  StartDate DATE,
+  EndDate DATE,
+  PRIMARY KEY(ProjectID, StaffedEmployee)
+)

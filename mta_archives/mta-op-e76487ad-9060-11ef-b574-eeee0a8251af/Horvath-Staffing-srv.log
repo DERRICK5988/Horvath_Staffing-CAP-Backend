@@ -1,0 +1,476 @@
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:33:40.125983] Updated app with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 ({"metadata"=>{"annotations"=>{"mta_id"=>"Horvath-Staffing", "mta_version"=>"1.0.7", "mta_module"=>"{\"name\":\"Horvath-Staffing-srv\"}", "mta_module_provided_dependencies"=>"[]", "mta_bound_services"=>"[\"Horvath-Staffing-db\",\"Horvath-Staffing-auth\",\"Horvath-Staffing-destination\",\"Horvath-Staffing-api-export-auth\"]"}, "labels"=>{"mta_id"=>"fd08f8f79b8f43d3bf4307d0921d2247"}}}) (STDOUT, API)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:13.151392] Uploading app package for app with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 (STDOUT, API)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:13.366486] Updated app with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 ({"environment_variables"=>"[PRIVATE DATA HIDDEN]"}) (STDOUT, API)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:20.057634] Stopping app with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 (STDOUT, API)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:20.358977] Creating build for app with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 (STDOUT, API)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:20.916133] Downloading nodejs_buildpack... (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:20.948287] Downloaded nodejs_buildpack (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:20.948354] Cell 738441f4-c100-4b5d-9275-ae8103fa6eb6 creating container for instance 52651e92-cb83-44e4-841c-8d26a32ae829 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:21.376121] Security group rules were updated (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:21.446601] Cell 738441f4-c100-4b5d-9275-ae8103fa6eb6 successfully created container for instance 52651e92-cb83-44e4-841c-8d26a32ae829 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:21.902622] Downloading app package... (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:21.902634] Downloading build artifacts cache... (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:21.962861] Downloaded app package (93.3K) (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:25.276623] Downloaded build artifacts cache (120M) (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:25.338449] -----> Nodejs Buildpack version 1.8.29 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:25.338478] [31;1m**WARNING**[0m buildpack version changed from 1.8.27 to 1.8.29 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:25.340372] -----> Bootstrapping python (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:25.340386] -----> Installing python 3.11.10 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:25.340427] Copy [/tmp/buildpacks/dd72518a96edd453/dependencies/1702ca2a28e126415ac89dabbae15144/python_3.11.10_linux_x64_cflinuxfs4_3bbfe1c5.tgz] (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:29.149383] -----> Installing binaries (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:29.149527] engines.node (package.json): ^18 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:29.149539] engines.npm (package.json): unspecified (use default) (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:29.149546] -----> Installing node 18.20.4 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:29.755#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28090###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:29.149642] Copy [/tmp/buildpacks/dd72518a96edd453/dependencies/25d795674ce9a8efb0e8f010cd0968a2/node_18.20.4_linux_x64_cflinuxfs4_0d65a7d1.tgz] (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.065687] Using default npm version: 10.7.0 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.065691] -----> Installing yarn 1.22.19 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.065887] Copy [/tmp/buildpacks/dd72518a96edd453/dependencies/0f06052381cbcef1593bd279ca3d9458/yarn_1.22.19_linux_noarch_any-stack_32d0e82e.tgz] (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.420834] Installed yarn 1.22.19 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.420854] -----> Creating runtime environment (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.421928] [34;1mPRO TIP:[0m It is recommended to vendor the application's Node.js dependencies (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.421945] Visit http://docs.cloudfoundry.org/buildpacks/node/index.html#vendoring (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.421948] NODE_ENV=production (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.421952] NODE_HOME=/tmp/contents3658725886/deps/0/node (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.421955] NODE_MODULES_CACHE=true (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.421958] NODE_VERBOSE=false (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.421960] NPM_CONFIG_LOGLEVEL=error (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.421964] NPM_CONFIG_PRODUCTION=true (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.421978] -----> Building dependencies (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:31.421985] Installing node modules (package.json + package-lock.json) (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:34.576759] added 208 packages, and audited 209 packages in 3s (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:34.576784] 24 packages are looking for funding (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:34.576803] run `npm fund` for details (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:34.578204] found 0 vulnerabilities (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:34.578841] npm notice (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:34.578850] npm notice New minor version of npm available! 10.7.0 -> 10.9.0 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:34.578853] npm notice Changelog: https://github.com/npm/cli/releases/tag/v10.9.0 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:34.578856] npm notice To update run: npm install -g npm@10.9.0 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:34.578858] npm notice (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:35.364085] [31;1m**WARNING**[0m Unmet dependencies don't fail npm install but may cause runtime issues (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:35.364101] See: https://github.com/npm/npm/issues/7494 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:34:39.948#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-28186###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:35.376858] Contrast Security no credentials found. Will not write environment files. (STDOUT, STG)#
+
+#2.0#2024 10 22 10:35:00.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82937###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:51.088094] Exit status 0 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:35:00.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82937###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:51.088134] Uploading droplet, build artifacts cache... (STDOUT, STG)#
+
+#2.0#2024 10 22 10:35:00.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82937###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:51.088170] Uploading build artifacts cache... (STDOUT, STG)#
+
+#2.0#2024 10 22 10:35:00.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82937###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:51.088184] Uploading droplet... (STDOUT, STG)#
+
+#2.0#2024 10 22 10:35:00.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82937###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:52.163402] Creating droplet for app with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 (STDOUT, API)#
+
+#2.0#2024 10 22 10:35:00.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82937###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:53.724100] Uploaded build artifacts cache (121.3M) (STDOUT, STG)#
+
+#2.0#2024 10 22 10:35:00.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82937###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:55.344202] Uploaded droplet (51.5M) (STDOUT, STG)#
+
+#2.0#2024 10 22 10:35:00.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82937###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:55.355878] Uploading complete (STDOUT, STG)#
+
+#2.0#2024 10 22 10:35:00.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82937###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:55.772373] Cell 738441f4-c100-4b5d-9275-ae8103fa6eb6 stopping instance 52651e92-cb83-44e4-841c-8d26a32ae829 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:35:00.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82937###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:55.772413] Cell 738441f4-c100-4b5d-9275-ae8103fa6eb6 destroying container for instance 52651e92-cb83-44e4-841c-8d26a32ae829 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:35:00.522#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82937###
+[PollStageAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:34:57.695079] Cell 738441f4-c100-4b5d-9275-ae8103fa6eb6 successfully destroyed container for instance 52651e92-cb83-44e4-841c-8d26a32ae829 (STDOUT, STG)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:00.710801] Updated app with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 ({:droplet_guid=>"3b9788e9-9cc9-4d4f-94a8-e1bdff798e31"}) (STDOUT, API)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:01.235795] Creating revision for app with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 (STDOUT, API)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:01.297104] Starting app with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 (STDOUT, API)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:01.594932] Cell b76ca4ad-84c5-470d-882f-653be4748b76 creating container for instance 085de44f-ae12-4fc3-499a-e487 (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:02.142889] Security group rules were updated (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:02.213094] Cell b76ca4ad-84c5-470d-882f-653be4748b76 successfully created container for instance 085de44f-ae12-4fc3-499a-e487 (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:02.494429] Downloading droplet... (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:05.270796] Downloaded droplet (51.5M) (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:05.270982] Starting health monitoring of container (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:05.333545] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:05.546835] Invoking start command. (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:05.946174] > Horvath-Staffing@1.0.1 start (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:05.946201] > cds run (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:05.951262] sh: 1: cds: not found (STDERR, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:10.840#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-91449###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:05.967453] Exit status 127 (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:11.903264] Process has crashed with type: "web" (STDOUT, API)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:11.903730] Cell b76ca4ad-84c5-470d-882f-653be4748b76 stopping instance 085de44f-ae12-4fc3-499a-e487 (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:11.903762] Cell b76ca4ad-84c5-470d-882f-653be4748b76 destroying container for instance 085de44f-ae12-4fc3-499a-e487 (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:11.918518] App instance exited with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 payload: {"instance"=>"085de44f-ae12-4fc3-499a-e487", "index"=>0, "cell_id"=>"b76ca4ad-84c5-470d-882f-653be4748b76", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 127", "crash_count"=>1, "crash_timestamp"=>1729593311880906635, "version"=>"78cda5e1-8770-44d4-a5b7-4ebea72955eb"} (STDOUT, API)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:12.044136] Exit status 137 (STDOUT, PROXY)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:12.109422] Cell 34285e93-c555-4be5-bcae-8c39f1ee6c00 creating container for instance 2afc6771-3bae-4120-5b55-256a (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:12.588031] Security group rules were updated (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:12.642822] Cell 34285e93-c555-4be5-bcae-8c39f1ee6c00 successfully created container for instance 2afc6771-3bae-4120-5b55-256a (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:13.241586] Downloading droplet... (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:13.670293] Cell b76ca4ad-84c5-470d-882f-653be4748b76 successfully destroyed container for instance 085de44f-ae12-4fc3-499a-e487 (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:16.059587] Downloaded droplet (51.5M) (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:16.059730] Starting health monitoring of container (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:16.124421] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:16.335605] Invoking start command. (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:16.748512] > Horvath-Staffing@1.0.1 start (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:16.748528] > cds run (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:16.752999] sh: 1: cds: not found (STDERR, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:20.882#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-82984###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:16.769975] Exit status 127 (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:22.888123] Cell 34285e93-c555-4be5-bcae-8c39f1ee6c00 stopping instance 2afc6771-3bae-4120-5b55-256a (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:22.888158] Cell 34285e93-c555-4be5-bcae-8c39f1ee6c00 destroying container for instance 2afc6771-3bae-4120-5b55-256a (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:22.896163] Process has crashed with type: "web" (STDOUT, API)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:23.010918] Exit status 137 (STDOUT, PROXY)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:23.019270] App instance exited with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 payload: {"instance"=>"2afc6771-3bae-4120-5b55-256a", "index"=>0, "cell_id"=>"34285e93-c555-4be5-bcae-8c39f1ee6c00", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 127", "crash_count"=>2, "crash_timestamp"=>1729593322875499211, "version"=>"78cda5e1-8770-44d4-a5b7-4ebea72955eb"} (STDOUT, API)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:23.136201] Cell 6653f995-e9ed-455a-978d-17504163f009 creating container for instance cba97539-da53-41d8-59ff-902d (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:23.610730] Security group rules were updated (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:23.759399] Cell 6653f995-e9ed-455a-978d-17504163f009 successfully created container for instance cba97539-da53-41d8-59ff-902d (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:24.225219] Downloading droplet... (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:24.750196] Cell 34285e93-c555-4be5-bcae-8c39f1ee6c00 successfully destroyed container for instance 2afc6771-3bae-4120-5b55-256a (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:27.129833] Downloaded droplet (51.5M) (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:27.129942] Starting health monitoring of container (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:27.191147] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:27.417037] Invoking start command. (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:27.793450] > Horvath-Staffing@1.0.1 start (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:27.793476] > cds run (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:27.797711] sh: 1: cds: not found (STDERR, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:31.069#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-83031###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:27.813232] Exit status 127 (STDOUT, APP/PROC/WEB)#
+
+#2.0#2024 10 22 10:35:41.284#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-88432###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:33.442067] Cell 6653f995-e9ed-455a-978d-17504163f009 stopping instance cba97539-da53-41d8-59ff-902d (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:41.284#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-88432###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:33.442109] Cell 6653f995-e9ed-455a-978d-17504163f009 destroying container for instance cba97539-da53-41d8-59ff-902d (STDOUT, CELL)#
+
+#2.0#2024 10 22 10:35:41.284#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-88432###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:33.458604] Process has crashed with type: "web" (STDOUT, API)#
+
+#2.0#2024 10 22 10:35:41.284#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-88432###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:33.472299] App instance exited with guid 9b6a16a2-7976-4fef-b368-ecd423de3843 payload: {"instance"=>"cba97539-da53-41d8-59ff-902d", "index"=>0, "cell_id"=>"6653f995-e9ed-455a-978d-17504163f009", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 127", "crash_count"=>3, "crash_timestamp"=>1729593333439541845, "version"=>"78cda5e1-8770-44d4-a5b7-4ebea72955eb"} (STDOUT, API)#
+
+#2.0#2024 10 22 10:35:41.284#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-88432###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:33.555770] Exit status 137 (STDOUT, PROXY)#
+
+#2.0#2024 10 22 10:35:41.284#Z#DEBUG#com.sap.cloud.lm.sl.xs2.e76487ad-9060-11ef-b574-eeee0a8251af.Horvath-Staffing-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLoggerProvider########flowable-async-job-executor-thread-88432###
+[PollStartAppStatusExecution] [Horvath-Staffing-srv] 9b6a16a2-7976-4fef-b368-ecd423de3843 [2024-10-22T10:35:35.084122] Cell 6653f995-e9ed-455a-978d-17504163f009 successfully destroyed container for instance cba97539-da53-41d8-59ff-902d (STDOUT, CELL)#
+

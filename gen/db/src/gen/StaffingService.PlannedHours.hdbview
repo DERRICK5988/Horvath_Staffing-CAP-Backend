@@ -1,0 +1,11 @@
+VIEW StaffingService_PlannedHours AS SELECT
+  PlannedHours_0.CreatedAt,
+  PlannedHours_0.CreatedBy,
+  PlannedHours_0.ModifiedAt,
+  PlannedHours_0.ModifiedBy,
+  PlannedHours_0.ProjectID,
+  PlannedHours_0.FiscalYear,
+  PlannedHours_0.Period,
+  PlannedHours_0.StaffedEmployee,
+  PlannedHours_0.StaffedEffort
+FROM horvath_btp_staffing_PlannedHours AS PlannedHours_0

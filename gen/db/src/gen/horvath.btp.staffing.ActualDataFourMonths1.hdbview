@@ -1,0 +1,9 @@
+VIEW horvath_btp_staffing_ActualDataFourMonths1 AS SELECT DISTINCT
+  ActualHours_0.ProjectID,
+  ActualHours_0.StaffedEmployee,
+  SUM(ActualHours_0.StaffedEffort) OVER (PARTITION BY ActualHours_0.ProjectID, ActualHours_0.StaffedEmployee) AS Month1
+FROM horvath_btp_staffing_ActualHours AS ActualHours_0
+WHERE (ActualHours_0.FiscalYear, ActualHours_0.Period) IN (SELECT
+    YearMonth1_1."YEAR",
+    YearMonth1_1."MONTH"
+  FROM horvath_btp_staffing_YearMonth1 AS YearMonth1_1)

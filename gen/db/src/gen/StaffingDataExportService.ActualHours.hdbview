@@ -1,0 +1,7 @@
+VIEW StaffingDataExportService_ActualHours AS SELECT
+  ActualHours_0.ProjectID,
+  ActualHours_0.FiscalYear,
+  ActualHours_0.Period,
+  ActualHours_0.StaffedEmployee,
+  ActualHours_0.StaffedEffort
+FROM horvath_btp_staffing_ActualHours AS ActualHours_0

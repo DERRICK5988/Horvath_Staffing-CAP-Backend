@@ -1,0 +1,9 @@
+VIEW horvath_btp_staffing_PlannedDataExcludingEmpty AS SELECT
+  PlannedDataFourMonths_0.ProjectID,
+  PlannedDataFourMonths_0.StaffedEmployee,
+  PlannedDataFourMonths_0.Month1,
+  PlannedDataFourMonths_0.Month2,
+  PlannedDataFourMonths_0.Month3,
+  PlannedDataFourMonths_0.Month4
+FROM horvath_btp_staffing_PlannedDataFourMonths AS PlannedDataFourMonths_0
+WHERE NOT (PlannedDataFourMonths_0.Month1 IS NULL AND PlannedDataFourMonths_0.Month2 IS NULL AND PlannedDataFourMonths_0.Month3 IS NULL AND PlannedDataFourMonths_0.Month4 IS NULL)

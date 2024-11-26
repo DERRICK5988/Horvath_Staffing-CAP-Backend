@@ -1,0 +1,9 @@
+COLUMN TABLE horvath_btp_staffing_StaffingData (
+  ProjectID NVARCHAR(40) NOT NULL,
+  WorkPackageID NVARCHAR(50) NOT NULL,
+  Period NVARCHAR(3) NOT NULL,
+  FiscalYear NVARCHAR(4) NOT NULL,
+  StaffedEmployee NVARCHAR(8) NOT NULL,
+  StaffedEffort DECIMAL(15, 3),
+  PRIMARY KEY(ProjectID, WorkPackageID, Period, FiscalYear, StaffedEmployee)
+)

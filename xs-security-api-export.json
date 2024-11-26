@@ -1,0 +1,5 @@
+{
+	"xsappname": "Horvath-Staffing-api-export-auth",
+	"tenant-mode": "dedicated",
+	"authorities": ["$ACCEPT_GRANTED_AUTHORITIES"]
+}

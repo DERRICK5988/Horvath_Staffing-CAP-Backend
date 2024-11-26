@@ -1,0 +1,7 @@
+VIEW horvath_btp_staffing_YearMonth4 AS SELECT
+  AllYearMonthRowNumber_0."YEAR",
+  AllYearMonthRowNumber_0."MONTH"
+FROM horvath_btp_staffing_AllYearMonthRowNumber AS AllYearMonthRowNumber_0
+WHERE AllYearMonthRowNumber_0.RowNumber IN (SELECT
+    Month4RowNumber_1.Month4RowNumber
+  FROM horvath_btp_staffing_Month4RowNumber AS Month4RowNumber_1)

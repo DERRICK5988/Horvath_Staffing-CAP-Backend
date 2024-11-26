@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "creator": "cds-dk 4.9.7"
+  },
+  "$version": "2.0",
+  "definitions": {
+    "YY1_EMPLOYEEANSENCEAPI_CDS_0001": {
+      "kind": "service",
+      "@cds.external": true,
+      "@m.IsDefaultEntityContainer": "true",
+      "@sap.message.scope.supported": "true",
+      "@sap.supported.formats": "atom json xlsx"
+    },
+    "YY1_EMPLOYEEANSENCEAPI_CDS_0001.YY1_EmployeeAnsenceAPI": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.semantics": "aggregate",
+      "@sap.label": "Employee Work / Ansence API",
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.LargeString",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false"
+        },
+        "PersonWorkAgreement": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.aggregation.role": "dimension",
+          "@sap.display.format": "NonNegative",
+          "@sap.required.in.filter": "false",
+          "@sap.text": "PersonFullName",
+          "@sap.label": "Personnel Number"
+        },
+        "CalendarDate": {
+          "type": "cds.Date",
+          "@sap.aggregation.role": "dimension",
+          "@sap.display.format": "Date",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Valid On",
+          "@sap.quickinfo": "Validity Date"
+        },
+        "PersonFullName": {
+          "type": "cds.String",
+          "length": 80,
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Full Name"
+        },
+        "FiscalYear": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.aggregation.role": "dimension",
+          "@sap.display.format": "NonNegative",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Fiscal Year"
+        },
+        "FiscalPeriod": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.aggregation.role": "dimension",
+          "@sap.display.format": "NonNegative",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "Fiscal Period"
+        },
+        "AbsenceInHours": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "@sap.aggregation.role": "measure",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "AbsenceInHours",
+          "@sap.filterable": "false"
+        },
+        "PlannedWorkingHours": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "@sap.aggregation.role": "measure",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "PlannedWorkingHours",
+          "@sap.filterable": "false"
+        },
+        "PersonHours": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2,
+          "@sap.aggregation.role": "measure",
+          "@sap.required.in.filter": "false",
+          "@sap.label": "PersonHours",
+          "@sap.filterable": "false"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+VIEW horvath_btp_staffing_UniqueYearMonth AS SELECT DISTINCT
+  M_TIME_DIMENSION_0."YEAR",
+  M_TIME_DIMENSION_0."MONTH"
+FROM horvath_btp_staffing_M_TIME_DIMENSION AS M_TIME_DIMENSION_0

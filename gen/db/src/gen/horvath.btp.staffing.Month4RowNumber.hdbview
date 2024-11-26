@@ -1,0 +1,4 @@
+VIEW horvath_btp_staffing_Month4RowNumber AS SELECT
+  AllYearMonthRowNumber_0.RowNumber + 3 AS Month4RowNumber
+FROM horvath_btp_staffing_AllYearMonthRowNumber AS AllYearMonthRowNumber_0
+WHERE AllYearMonthRowNumber_0.CurrentYearMonthIndicator = TRUE

@@ -1,0 +1,9 @@
+VIEW horvath_btp_staffing_PlannedDataFourMonths2 AS SELECT DISTINCT
+  PlannedHours_0.ProjectID,
+  PlannedHours_0.StaffedEmployee,
+  SUM(PlannedHours_0.StaffedEffort) OVER (PARTITION BY PlannedHours_0.ProjectID, PlannedHours_0.StaffedEmployee) AS Month2
+FROM horvath_btp_staffing_PlannedHours AS PlannedHours_0
+WHERE (PlannedHours_0.FiscalYear, PlannedHours_0.Period) IN (SELECT
+    YearMonth2_1."YEAR",
+    YearMonth2_1."MONTH"
+  FROM horvath_btp_staffing_YearMonth2 AS YearMonth2_1)

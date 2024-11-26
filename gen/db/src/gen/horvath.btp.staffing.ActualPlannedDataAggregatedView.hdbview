@@ -1,0 +1,7 @@
+VIEW horvath_btp_staffing_ActualPlannedDataAggregatedView AS SELECT DISTINCT
+  ActualPlannedDataFourMonthsView_0.StaffedEmployee,
+  CAST(IFNULL(SUM(ActualPlannedDataFourMonthsView_0.Month1) OVER (PARTITION BY ActualPlannedDataFourMonthsView_0.StaffedEmployee), 0) AS DECIMAL(15, 2)) AS Month1,
+  CAST(IFNULL(SUM(ActualPlannedDataFourMonthsView_0.Month2) OVER (PARTITION BY ActualPlannedDataFourMonthsView_0.StaffedEmployee), 0) AS DECIMAL(15, 2)) AS Month2,
+  CAST(IFNULL(SUM(ActualPlannedDataFourMonthsView_0.Month3) OVER (PARTITION BY ActualPlannedDataFourMonthsView_0.StaffedEmployee), 0) AS DECIMAL(15, 2)) AS Month3,
+  CAST(IFNULL(SUM(ActualPlannedDataFourMonthsView_0.Month4) OVER (PARTITION BY ActualPlannedDataFourMonthsView_0.StaffedEmployee), 0) AS DECIMAL(15, 2)) AS Month4
+FROM horvath_btp_staffing_ActualPlannedDataFourMonthsView AS ActualPlannedDataFourMonthsView_0

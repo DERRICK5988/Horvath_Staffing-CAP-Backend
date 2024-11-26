@@ -1,0 +1,24 @@
+VIEW horvath_btp_staffing_PlannedDataFourMonths AS SELECT DISTINCT
+  PlannedHours_4.ProjectID,
+  PlannedHours_4.StaffedEmployee,
+  PlannedDataFourMonths1_0.Month1,
+  PlannedDataFourMonths2_1.Month2,
+  PlannedDataFourMonths3_2.Month3,
+  PlannedDataFourMonths4_3.Month4
+FROM ((((horvath_btp_staffing_PlannedHours AS PlannedHours_4 LEFT JOIN (SELECT
+    PlannedDataFourMonths1_5.ProjectID,
+    PlannedDataFourMonths1_5.StaffedEmployee,
+    PlannedDataFourMonths1_5.Month1
+  FROM horvath_btp_staffing_PlannedDataFourMonths1 AS PlannedDataFourMonths1_5) AS PlannedDataFourMonths1_0 ON PlannedHours_4.ProjectID = PlannedDataFourMonths1_0.ProjectID AND PlannedHours_4.StaffedEmployee = PlannedDataFourMonths1_0.StaffedEmployee) LEFT JOIN (SELECT
+    PlannedDataFourMonths2_6.ProjectID,
+    PlannedDataFourMonths2_6.StaffedEmployee,
+    PlannedDataFourMonths2_6.Month2
+  FROM horvath_btp_staffing_PlannedDataFourMonths2 AS PlannedDataFourMonths2_6) AS PlannedDataFourMonths2_1 ON PlannedHours_4.ProjectID = PlannedDataFourMonths2_1.ProjectID AND PlannedHours_4.StaffedEmployee = PlannedDataFourMonths2_1.StaffedEmployee) LEFT JOIN (SELECT
+    PlannedDataFourMonths3_7.ProjectID,
+    PlannedDataFourMonths3_7.StaffedEmployee,
+    PlannedDataFourMonths3_7.Month3
+  FROM horvath_btp_staffing_PlannedDataFourMonths3 AS PlannedDataFourMonths3_7) AS PlannedDataFourMonths3_2 ON PlannedHours_4.ProjectID = PlannedDataFourMonths3_2.ProjectID AND PlannedHours_4.StaffedEmployee = PlannedDataFourMonths3_2.StaffedEmployee) LEFT JOIN (SELECT
+    PlannedDataFourMonths4_8.ProjectID,
+    PlannedDataFourMonths4_8.StaffedEmployee,
+    PlannedDataFourMonths4_8.Month4
+  FROM horvath_btp_staffing_PlannedDataFourMonths4 AS PlannedDataFourMonths4_8) AS PlannedDataFourMonths4_3 ON PlannedHours_4.ProjectID = PlannedDataFourMonths4_3.ProjectID AND PlannedHours_4.StaffedEmployee = PlannedDataFourMonths4_3.StaffedEmployee)
